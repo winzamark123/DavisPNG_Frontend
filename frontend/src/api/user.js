@@ -8,6 +8,9 @@ const user = {
     name: "John Doe",
     email: "JohnDoe@gmail.com",
     profilePic: tempProfile,
+    profileDescrip: "fdsakl;jfkl;sajdfkl;jasdfkl;jasdkl;fjkl;asdfkl;asdkl;fjaskl;djf", 
+    price: 80,
+    age: 29
 
 }
 

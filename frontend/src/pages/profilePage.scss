@@ -14,6 +14,20 @@
     width: 100%;
 
     background-color: #94ad75;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.profile{
+    border: 1px solid wheat;
+    width: 80%;
+    height: 80%;
+
+    &_pic{
+        width: 100px;
+        height: 100px;
+    }
 }
 
 .portfolio_container{
@@ -22,3 +36,4 @@
 
     background-color: whitesmoke;
 }
+
