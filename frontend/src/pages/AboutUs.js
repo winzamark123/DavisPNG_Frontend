@@ -6,7 +6,7 @@ const AboutUs = () => {
 
     return (
         (
-            <div className="temp-bg"></div>
+            <div className="temp-bg">This will be the AboutUS Page when LoggedIN</div>
         )
     )
 }

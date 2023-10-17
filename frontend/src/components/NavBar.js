@@ -1,5 +1,8 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import './NavBar.scss';
+import LoginBTN from './LoginBTN';
+import AboutUs from '../pages/AboutUs';
+import Photographers from '../pages/Photographers';
 
 const NavBar = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -9,13 +12,13 @@ const NavBar = () => {
             <div className="nav_main_container">
                 <ul className="nav_items">
                     <li className="nav_items_item">
-                        <a href="/">PHOTOGRAPHERS</a>
+                        <a href="/photographers">PHOTOGRAPHERS</a>
                     </li>
                     <li className="nav_items_item">
-                        <a href="#">ABOUT US</a>
+                        <a href="/aboutus">ABOUT US</a>
                     </li>
                     <li className="nav_items_item">
-                        <a href="#">{user.name}</a>
+                        {user.name}
                     </li>
                 </ul>
             </div>
@@ -23,13 +26,13 @@ const NavBar = () => {
             <div className="nav_main_container">
                 <ul className="nav_items">
                     <li className="nav_items_item">
-                        <a href="/">PHOTOGRAPHERS</a>
+                        <a href="/photographers">PHOTOGRAPHERS</a>
                     </li>
                     <li className="nav_items_item">
-                        <a href="#">ABOUT US</a>
+                        <a href="/aboutus">ABOUT US</a>
                     </li>
                     <li className="nav_items_item">
-                        <a href="#">SIGNUP / LOGIN</a>
+                        <LoginBTN />
                     </li>
                 </ul>
             </div>
