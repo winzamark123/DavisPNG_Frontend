@@ -1,8 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import './NavBar.scss';
 import LoginBTN from './LoginBTN';
-import AboutUs from '../pages/AboutUs';
-import Photographers from '../pages/Photographers';
+import LogoutBTN from './LogoutBTN';
 
 const NavBar = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -18,7 +17,13 @@ const NavBar = () => {
                         <a href="/aboutus">ABOUT US</a>
                     </li>
                     <li className="nav_items_item">
-                        {user.name}
+                        <a href="/settings">SETTINGS</a>
+                    </li>
+                    <li className="nav_items_item">
+                        <a href="/profile">PROFILE</a>
+                    </li>
+                    <li className="nav_items_item">
+                        <LogoutBTN />
                     </li>
                 </ul>
             </div>

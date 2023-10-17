@@ -1,0 +1,24 @@
+
+.profilePage{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_container{
+    height: 600px;
+    width: 100%;
+
+    background-color: #94ad75;
+}
+
+.portfolio_container{
+    height: 410px;
+    width: 100%;
+
+    background-color: whitesmoke;
+}
