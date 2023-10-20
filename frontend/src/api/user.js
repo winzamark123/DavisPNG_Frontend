@@ -8,7 +8,7 @@ const user = {
     name: "John Doe",
     email: "JohnDoe@gmail.com",
     profilePic: tempProfile,
-    profileDescrip: "fdsakl;jfkl;sajdfkl;jasdfkl;jasdkl;fjkl;asdfkl;asdkl;fjaskl;djf", 
+    profileDescrip: "Jacques Morel is a multifaceted creator specializing in hosting, producing, and analog film photography. With a decade of digital media experience, Jacques has interviewed notable figures ranging from John Legend to Senator Cory Booker, and his photography has been featured in Blanc Magazine, Office Magazine, and MoMA Magazine. His unique storytelling ability and keen eye for capturing moments are what sets him apart. Jacques continues to roam the streets of Brooklyn and beyond, sharing his craft with the world one snapshot at a time.",
     price: 80,
     age: 29
 

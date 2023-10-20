@@ -21,13 +21,39 @@
 }
 .profile{
     border: 1px solid wheat;
-    width: 80%;
+    width: 1250px;
     height: 80%;
+    display: flex; 
+    flex-direction: row;
 
-    &_pic{
-        width: 100px;
-        height: 100px;
+    &_left{
+        width: 33%;
+        &_pic{
+            width: 360px;
+            height: 360px;
+    
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+    
+            // margin: 20px 20px 20px 20px;
+        }
+
+        &_text{
+
+        }
     }
+
+    
+    &_right{
+        width: 66%;
+
+        &_descrip{
+            border: 1px solid royalblue;
+            font-size: 24px;
+        }
+    }
+    
 }
 
 .portfolio_container{
