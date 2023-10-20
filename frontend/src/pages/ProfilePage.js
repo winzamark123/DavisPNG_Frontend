@@ -15,10 +15,15 @@ const ProfilePage = () => {
                             <div className="profile_left_pic" style={{ backgroundImage: `url(${tempUser.profilePic})` }}>
                             </div>
                             <div className="profile_left_text">
-                                {tempUser.name}
-                                {tempUser.email}
-                                {tempUser.age}
-                                {tempUser.price}
+                                <div className="profile_left_text_row">Name: {tempUser.name}</div>
+                                <div className="profile_left_text_row">Price: {tempUser.price}</div>
+                                <div className="profile_left_text_row">Gender: {tempUser.gender}</div>
+                                <div className="profile_left_text_row">Age: {tempUser.age}</div>
+
+
+
+
+
                             </div>
                         </div>
                         <div className="profile_right">
