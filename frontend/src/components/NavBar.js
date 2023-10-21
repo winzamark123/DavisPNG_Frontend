@@ -17,10 +17,10 @@ const NavBar = () => {
                         <a href="/aboutus">ABOUT US</a>
                     </li>
                     <li className="nav_items_item">
-                        <a href="/settings">SETTINGS</a>
+                        <a href="/profile">PROFILE</a>
                     </li>
                     <li className="nav_items_item">
-                        <a href="/profile">PROFILE</a>
+                        <a href="/settings">SETTINGS</a>
                     </li>
                     <li className="nav_items_item">
                         <LogoutBTN />

@@ -4,7 +4,6 @@ import './profilePage.scss';
 import { getUserProfile } from '../api/user';
 
 const ProfilePage = () => {
-    const { user, isAuthenticated } = useAuth0();
     const tempUser = getUserProfile();
     return (
         (
