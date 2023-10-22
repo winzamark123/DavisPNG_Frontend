@@ -1,1 +1,30 @@
-#email
+#backgroundPictures{
+    #logo{
+        margin-left:604px;
+        margin-top:67px;
+        margin-bottom: 750px;
+        margin-right:603px;
+        height:165px;
+        width:305px;
+        flex-shrink: 0;
+        z-index: 1;
+    }
+    #cloud1{
+        margin-bottom: 577px;
+        margin-right: 276px;
+        margin-left: 723px;
+        margin-top: -105px;
+    }
+    #cloud2{
+
+    }
+    #cloud3{
+
+    }
+    #cow{
+
+    }
+    #cloud4{
+
+    }
+}
