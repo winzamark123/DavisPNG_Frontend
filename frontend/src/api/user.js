@@ -3,6 +3,7 @@
 // import axios from 'axios';
 import tempProfile from '../assets/tempProfile.png';
 const BASE_URL = 'https://yourbackendurl.com/api';
+
 const user = {
     ID: 1234,
     name: "John Doe",

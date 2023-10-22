@@ -7,6 +7,7 @@ const Photographers = () => {
         isAuthenticated ? (
             <div className="some">
                 This will be the view for when Photographers LoggedIN
+
             </div>
         ) : ( //USER NOT LOGGED IN 
             <div className="nav_main_container">
