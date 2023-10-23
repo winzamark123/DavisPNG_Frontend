@@ -20,7 +20,7 @@ function NotFound() {
 function App() {
   return (
     <div className="App">
-      <NavBar />
+       <NavBar />
       <Router>
         <Routes>
           <Route path="/aboutus" element={<AboutUsPage />} />

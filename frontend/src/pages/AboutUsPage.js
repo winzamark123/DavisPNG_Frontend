@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import './aboutUsPage.scss';
-
+import NavBar from "../components/NavBar";
 import tempUser from '../api/user';
 
 const AboutUsPage = () => {
@@ -9,6 +9,7 @@ const AboutUsPage = () => {
     return (
         (
             <div className="aboutUs">
+                <NavBar />
                Temp About US PAGE
             </div>
         )

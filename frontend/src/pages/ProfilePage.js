@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import './profilePage.scss';
+import NavBar from "../components/NavBar";
 
 import { getUserProfile } from '../api/user';
 
@@ -8,6 +9,7 @@ const ProfilePage = () => {
     return (
         (
             <div className="profilePage">
+                 <NavBar />
                 <div className="profile_container">
                     <div className="profile">
                         <div className="profile_left">
