@@ -20,10 +20,10 @@ function NotFound() {
 function App() {
   return (
     <div className="App">
-       <NavBar />
+      {/* <NavBar /> */}
       <Router>
         <Routes>
-          <Route path="/aboutus" element={<AboutUsPage />} />
+          <Route path="/" element={<AboutUsPage />} />
           <Route path="/photographers" element={<PhotographersPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<SettingsPage />} />

@@ -12,16 +12,32 @@ $bg-color: rgba(31, 80, 63, 0.31);
     background-color: $bg-color;
 
     align-items: center;
-    justify-content: center;
-    
-}
+    // justify-content: center;
 
-.settings_container{
-    width: 90%;
-    height: 90%;
-    border-radius: 44px;
-    background-color: whitesmoke;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    &_left{
+        border: 1px solid red;
+        margin-left: 5%;
+        width: 50%;
+        height: 90%;
+    
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+    
+        &_container{
+            width: 80%;
+            // width: 700px;
+            height: 100%;
+            border-radius: 44px;
+            background-color: whitesmoke;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &_right{
+        
+    }
+    
 }
 
 .settings{
@@ -40,6 +56,11 @@ $bg-color: rgba(31, 80, 63, 0.31);
         height: 80%;
 
         display: flex;
+
+        &_left{
+            border: 1px solid green;
+            width: 50%;
+        }
 
         &_prof{
             border: 1px solid red;

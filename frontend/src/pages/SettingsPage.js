@@ -6,29 +6,19 @@ const SettingsPage = () => {
     const tempUser = getUserProfile();
     return (
         <div className="settingsPage">
-            <div className="settings_container">
-                <div className="settings">
-                    <div className="settings_inner">
-                        <div className="settings_inner_prof">
-                            <div className="settings_inner_prof_pic" style={{ backgroundImage: `url(${tempUser.profilePic})` }}></div>
-                            <div className="settings_inner_prof_edit"></div>
-                        </div>
-                    </div>
-
-                    <div className="settings_inner_info">
-                        <div className="settings_inner_info_form">
-                            <div className="settings_inner_info_form_left"></div>
-                            <div className="settings_inner_info_form_right"></div>
-                        </div>
-                    </div>
+            <div className="settingsPage_left">
+                <div className="settingsPage_left_container">
                 </div>
             </div>
-            <div className="settings_lock">
+            <div className="settingsPage_right">
+                
+            </div>
+            {/* <div className="settings_lock">
                 <div className="settings_lock_icons">
                     <i class="fi fi-bs-circle-user"></i>
                     <i class="fi fi-sr-lock"></i>
                 </div>
-            </div>
+            </div> */}
 
         </div>
     )
