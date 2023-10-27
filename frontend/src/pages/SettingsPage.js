@@ -2,7 +2,7 @@ import './settingsPage.scss'
 import DatePicker from 'react-datepicker';
 import { getUserProfile } from '../api/user';
 import "react-datepicker/dist/react-datepicker.css";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { faMars, faVenus, faTransgender, faDownLong } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -10,13 +10,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const SettingsPage = () => {
     const tempUser = getUserProfile();
     const [firstName, setFirstName] = useState(tempUser.name);
+    const [middleName, setMiddleName] = useState("");
     const [lastName, setLastName] = useState(tempUser.name);
     const [username, setUsername] = useState(tempUser.name);
-    const [password, setPassword] = useState(tempUser.password);
     const [birthDate, setBirthDate] = useState(new Date());
     const [userGender, setuserGender] = useState(null);
     const [userPronouns, setuserPronouns] = useState(null);
-    const [userLocation, setuserLocation] = useState("Davis, CA");
+    const [school, setSchool] = useState("Davis, CA");
+    const [priceRange, setPriceRange] = useState(0);
 
 
     const gender = {
@@ -26,19 +27,19 @@ const SettingsPage = () => {
     }
 
     const pronouns = {
-        he: { text: "He/Him", icon: null },
-        she: { text: "She/Her", icon: null },
-        they: { text: "They/Them", icon: null },
-        other: { text: "Other", icon: null }
+        he: { text: "He/Him", icon: faDownLong },
+        she: { text: "She/Her", icon: faDownLong },
+        they: { text: "They/Them", icon: faDownLong },
+        other: { text: "Other", icon: faDownLong }
     }
 
     function DropdownMenu({ items = {}, category }) {
         const [open, setOpen] = useState(false);
         const [selectedText, setSelectedText] = useState("");
 
-        useEffect(() => {
-            console.log(selectedText); // This will log the updated value whenever selectedText changes
-        }, [selectedText]);
+        // useEffect(() => {
+        //     console.log(selectedText); // This will log the updated value whenever selectedText changes
+        // }, [selectedText]);
 
 
         const handleSelect = (item) => {
@@ -49,6 +50,8 @@ const SettingsPage = () => {
             } else if (category === "Pronouns") {
                 setuserPronouns(item.text);
             }
+
+            console.log(item.text);
 
             setSelectedText(item.text);
             setOpen(false);
@@ -69,7 +72,7 @@ const SettingsPage = () => {
             <div className="dropdown">
 
                 <button href="#" className="dropdown_BTN" onClick={() => setOpen(!open)}>
-                    {selectedText || "Select" + category}
+                    {selectedText ? selectedText : "Select" + category}
                     <FontAwesomeIcon icon={faDownLong} />
                 </button>
 
@@ -92,16 +95,19 @@ const SettingsPage = () => {
             firstName: firstName,
             lastName: lastName,
             username: username,
-            password: password, // Consider not storing password directly in state for security reasons.
             birthDate: birthDate,
-            gender: gender,
-            pronouns: pronouns,
-            workLocation: "Davis, CA" // For now, as per your code
+            gender: userGender,
+            pronouns: userPronouns,
+            school: "Davis, CA", // For now, as per your code
+            priceRange: priceRange
+            //School 
+
         };
 
         const jsonData = JSON.stringify(userData);
 
         // Now, send jsonData to your backend
+        console.log(jsonData);
         sendToBackend(jsonData);
     }
 
@@ -142,26 +148,41 @@ const SettingsPage = () => {
                     </div>
 
                     <div className="settingsPage_left_container_form">
-                        <div className="settingsPage_left_container_form_firstName">
-                            <div className="settingsPage_left_container_form_firstName_label">First Name</div>
-                            <div className="settingsPage_left_container_form_firstName_input">
-                                <input type="text"
-                                    placeholder={tempUser.name}
-                                    value={firstName}
-                                    onChange={(e) => setFirstName(e.target.value)}
-                                />
+                        <div className="settingsPage_left_container_form_left">
+                            <div className="settingsPage_left_container_form_left_firstName">
+                                <div className="settingsPage_left_container_form_left_firstName_label">First Name</div>
+                                <div className="settingsPage_left_container_form_left_firstName_input">
+                                    <input type="text"
+                                        placeholder={tempUser.name}
+                                        value={firstName}
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            <div className="settingsPage_left_container_form_left_lastName">
+                                <div className="settingsPage_left_container_form_left_lastName_label">Last Name</div>
+                                <div className="settingsPage_left_container_form_left_lastName_input">
+                                    <input type="text"
+                                        placeholder={tempUser.name}
+                                        value={lastName}
+                                        onChange={(e) => setLastName(e.target.value)}
+                                    />
+                                </div>
                             </div>
                         </div>
-                        <div className="settingsPage_left_container_form_lastName">
-                            <div className="settingsPage_left_container_form_lastName_label">Last Name</div>
-                            <div className="settingsPage_left_container_form_lastName_input">
-                                <input type="text"
-                                    placeholder={tempUser.name}
-                                    value={lastName}
-                                    onChange={(e) => setLastName(e.target.value)}
-                                />
+                        <div className="settingsPage_left_container_form_right">
+                            <div className="settingsPage_left_container_form_right_middleName">
+                                <div className="settingsPage_left_container_form_right_middleName_label">Middle Name</div>
+                                <div className="settingsPage_left_container_form_right_middleName_input">
+                                    <input type="text"
+                                        placeholder={tempUser.name}
+                                        value={middleName}
+                                        onChange={(e) => setMiddleName(e.target.value)}
+                                    />
+                                </div>
                             </div>
                         </div>
+
                         <div className="settingsPage_left_container_form_username">
                             <div className="settingsPage_left_container_form_username_label">Username</div>
                             <div className="settingsPage_left_container_form_username_input">
@@ -169,17 +190,6 @@ const SettingsPage = () => {
                                     placeholder={tempUser.name}
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        {/* This might need to Change as it is not secured to save password like this */}
-                        <div className="settingsPage_left_container_form_password">
-                            <div className="settingsPage_left_container_form_password_label">Password</div>
-                            <div className="settingsPage_left_container_form_password_input">
-                                <input type="password"
-                                    placeholder="********"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -201,14 +211,20 @@ const SettingsPage = () => {
                                 items={pronouns} category="Pronouns">
                             </DropdownMenu>
                         </div>
-                        <div className="settingsPage_left_container_form_workLocation">
-                            <div className="settingsPage_left_container_form_workLocation_label">Working Location</div>
-                            <div className="settingsPage_left_container_form_workLocation_input">
+                        <div className="settingsPage_left_container_form_School">
+                            <div className="settingsPage_left_container_form_School_label">School</div>
+                            <div className="settingsPage_left_container_form_School_input">
                                 <input type="text" placeholder={tempUser.name} value={"Davis, CA"} /> {/* Davis for now */}
                             </div>
                         </div>
+                        <div className="settingsPage_left_container_form_priceRange">
+                            <div className="settingsPage_left_container_form_priceRange_label">Price Range</div>
+                            <div className="settingsPage_left_container_form_priceRange_input">
+                                <input type="number" name="quantity" min="1" max="1000" placeholder={priceRange} onChange={(e) => setPriceRange(e.target.value)} />
+                            </div>
+                        </div>
                         <div className="settingsPage_left_container_form_button">
-                            <button onClick={() => updateSettings}>Update Settings</button>
+                            <button onClick={updateSettings}>Update Settings</button>
                         </div>
                     </div>
 
