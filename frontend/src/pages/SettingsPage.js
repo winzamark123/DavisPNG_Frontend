@@ -140,93 +140,102 @@ const SettingsPage = () => {
             <div className="settingsPage_left">
                 <div className="settingsPage_left_container">
                     <div className="settingsPage_left_container_title">
-                        PERSONAL INFORMATION
-                    </div>
-                    <div className="settingsPage_left_container_profile">
-                        <div className="settingsPage_left_container_profile_pic"></div>
-                        <div className="settingsPage_left_container_profile_edit"></div>
+                        <span>PERSONAL INFORMATION</span>
                     </div>
 
-                    <div className="settingsPage_left_container_form">
-                        <div className="settingsPage_left_container_form_left">
-                            <div className="settingsPage_left_container_form_left_firstName">
-                                <div className="settingsPage_left_container_form_left_firstName_label">First Name</div>
-                                <div className="settingsPage_left_container_form_left_firstName_input">
-                                    <input type="text"
-                                        placeholder={tempUser.name}
-                                        value={firstName}
-                                        onChange={(e) => setFirstName(e.target.value)}
-                                    />
-                                </div>
-                            </div>
-                            <div className="settingsPage_left_container_form_left_lastName">
-                                <div className="settingsPage_left_container_form_left_lastName_label">Last Name</div>
-                                <div className="settingsPage_left_container_form_left_lastName_input">
-                                    <input type="text"
-                                        placeholder={tempUser.name}
-                                        value={lastName}
-                                        onChange={(e) => setLastName(e.target.value)}
-                                    />
-                                </div>
-                            </div>
+                    <div className="settingsPage_left_container_body">
+                        <div className="settingsPage_left_container_body_profile">
+                            <div className="settingsPage_left_container_body_profile_pic"></div>
+                            <div className="settingsPage_left_container_body_profile_edit"></div>
                         </div>
-                        <div className="settingsPage_left_container_form_right">
-                            <div className="settingsPage_left_container_form_right_middleName">
-                                <div className="settingsPage_left_container_form_right_middleName_label">Middle Name</div>
-                                <div className="settingsPage_left_container_form_right_middleName_input">
-                                    <input type="text"
-                                        placeholder={tempUser.name}
-                                        value={middleName}
-                                        onChange={(e) => setMiddleName(e.target.value)}
-                                    />
+
+                        <div className="settingsPage_left_container_body_form">
+                            <div className="settingsPage_left_container_body_form_left">
+                                <div className="settingsPage_left_container_body_form_left_firstName">
+                                    <div className="settingsPage_left_container_body_form_left_firstName_label">First Name</div>
+                                    <div className="settingsPage_left_container_body_form_left_firstName_input">
+                                        <input type="text"
+                                            placeholder={tempUser.name}
+                                            value={firstName}
+                                            onChange={(e) => setFirstName(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="settingsPage_left_container_body_form_left_lastName">
+                                    <div className="settingsPage_left_container_body_form_left_lastName_label">Last Name</div>
+                                    <div className="settingsPage_left_container_body_form_left_lastName_input">
+                                        <input type="text"
+                                            placeholder={tempUser.name}
+                                            value={lastName}
+                                            onChange={(e) => setLastName(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="settingsPage_left_container_body_form_left_BD">
+                                    <div className="settingsPage_left_container_body_form_left_BD_label">Birth Date</div>
+                                    <DatePicker selected={birthDate} onChange={(date) => setBirthDate(date)} />
+                                </div>
+
+                                <div className="settings_Page_left_container_form_left_gender">
+                                    <div className="settingsPage_left_container_body_form_left_gender_label">Gender</div>
+                                    <DropdownMenu
+                                        items={gender} category="Gender">
+                                    </DropdownMenu>
+                                </div>
+                                <div className="settingsPage_left_container_body_form_left_pronouns">
+                                    <div className="settingsPage_left_container_body_form_left_prounouns_label">Pronouns</div>
+                                    <DropdownMenu
+                                        items={pronouns} category="Pronouns">
+                                    </DropdownMenu>
+                                </div>
+                                <div className="settingsPage_left_container_body_form_left_School">
+                                    <div className="settingsPage_left_container_body_form_left_School_label">School</div>
+                                    <div className="settingsPage_left_container_body_form_left_School_input">
+                                        <input type="text" placeholder={tempUser.name} value={"Davis, CA"} /> {/* Davis for now */}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="settingsPage_left_container_body_form_right">
+                                <div className="settingsPage_left_container_body_form_right_middleName">
+                                    <div className="settingsPage_left_container_body_form_right_middleName_label">Middle Name</div>
+                                    <div className="settingsPage_left_container_body_form_right_middleName_input">
+                                        <input type="text"
+                                            placeholder={tempUser.name}
+                                            value={middleName}
+                                            onChange={(e) => setMiddleName(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="settingsPage_left_container_body_form_right_username">
+                                    <div className="settingsPage_left_container_body_form_right_username_label">Username</div>
+                                    <div className="settingsPage_left_container_body_form_right_username_input">
+                                        <input type="text"
+                                            placeholder={tempUser.name}
+                                            value={username}
+                                            onChange={(e) => setUsername(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="settingsPage_left_container_body_form_right_priceRange">
+                                    <div className="settingsPage_left_container_body_form_right_priceRange_label">Price Range</div>
+                                    <div className="settingsPage_left_container_body_form_right_priceRange_input">
+                                        <input type="number" name="quantity" min="1" max="1000" placeholder={priceRange} onChange={(e) => setPriceRange(e.target.value)} />
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="settingsPage_left_container_form_username">
-                            <div className="settingsPage_left_container_form_username_label">Username</div>
-                            <div className="settingsPage_left_container_form_username_input">
-                                <input type="text"
-                                    placeholder={tempUser.name}
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                        <div className="settingsPage_left_container_form_BD">
-                            <div className="settingsPage_left_container_form_BD_label">Birth Date</div>
-                            <DatePicker selected={birthDate} onChange={(date) => setBirthDate(date)} />
-
-                        </div>
-
-                        <div className="settings_Page_left_container_form_gender">
-                            <div className="settingsPage_left_container_form_gender_label">Gender</div>
-                            <DropdownMenu
-                                items={gender} category="Gender">
-                            </DropdownMenu>
-                        </div>
-                        <div className="settingsPage_left_container_form_pronouns">
-                            <div className="settingsPage_left_container_form_prounouns_label">Pronouns</div>
-                            <DropdownMenu
-                                items={pronouns} category="Pronouns">
-                            </DropdownMenu>
-                        </div>
-                        <div className="settingsPage_left_container_form_School">
-                            <div className="settingsPage_left_container_form_School_label">School</div>
-                            <div className="settingsPage_left_container_form_School_input">
-                                <input type="text" placeholder={tempUser.name} value={"Davis, CA"} /> {/* Davis for now */}
-                            </div>
-                        </div>
-                        <div className="settingsPage_left_container_form_priceRange">
-                            <div className="settingsPage_left_container_form_priceRange_label">Price Range</div>
-                            <div className="settingsPage_left_container_form_priceRange_input">
-                                <input type="number" name="quantity" min="1" max="1000" placeholder={priceRange} onChange={(e) => setPriceRange(e.target.value)} />
-                            </div>
-                        </div>
-                        <div className="settingsPage_left_container_form_button">
-                            <button onClick={updateSettings}>Update Settings</button>
-                        </div>
                     </div>
+                    <div className="settingsPage_left_container_updateBTN">
+                        <button onClick={updateSettings}>Update Settings</button>
+                    </div>
+
+
+
+
+
+
 
                 </div>
             </div>
