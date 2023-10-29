@@ -1,7 +1,8 @@
 import { useAuth0, getTokenSilently } from '@auth0/auth0-react';
 import './NavBar.scss';
-import LoginBTN from './LoginBTN';
-import LogoutBTN from './LogoutBTN';
+// import LoginBTN from './LoginBTN';
+// import LogoutBTN from './LogoutBTN';
+import AuthBTN from './AuthBTN';
 import { useEffect } from 'react';
 
 const NavBar = () => {
@@ -24,12 +25,6 @@ const NavBar = () => {
         }
     };
 
-    useEffect(() => {
-        if (isAuthenticated) {
-            fetchTokenAndUserID();
-        }
-    }, [isAuthenticated]);
-
     return (
         isAuthenticated ? (
             <div className="nav_main_container">
@@ -47,7 +42,7 @@ const NavBar = () => {
                         <a href="/settings">SETTINGS</a>
                     </li>
                     <li className="nav_items_item">
-                        <LogoutBTN />
+                        <AuthBTN />
                         {/* <LoginBTN /> */}
                     </li>
                 </ul>
@@ -62,7 +57,7 @@ const NavBar = () => {
                         <a href="/aboutus">ABOUT US</a>
                     </li>
                     <li className="nav_items_item">
-                        <LoginBTN />
+                        <AuthBTN />
                     </li>
                 </ul>
             </div>

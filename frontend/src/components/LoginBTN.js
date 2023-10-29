@@ -20,10 +20,15 @@ const LoginBTN = () => {
         }
     };
 
+    const handleClick = async () => {
+        await loginWithRedirect();
+        fetchTokenAndUserID();
+    }
+
     return (
         <>
             {!isAuthenticated && (
-                <button onClick={() => loginWithRedirect()}>Log In</button>
+                <button onClick={handleClick}>Log In</button>
             )}
         </>
     );

@@ -110,6 +110,7 @@ const SettingsPage = () => {
 
         // Now, send jsonData to your backend
         console.log(jsonData);
+
         createUserProfile(jsonData).then(response => {
             console.log("Success:", response.data);
         })
@@ -118,30 +119,6 @@ const SettingsPage = () => {
             });
         ;
     }
-
-    function sendToBackend(data) {
-        // Send data to backend
-
-        // Using Fetch API as an example:
-        fetch('YOUR_BACKEND_ENDPOINT_HERE', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: data
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data); // Handle the response from your backend here.
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-
-
-
-    }
-
 
     return (
         <div className="settingsPage">

@@ -28,8 +28,15 @@ export const updateUserProfile = (userId, data) => {
     // return axios.put(`${BASE_URL}/user/${userId}`, data);
 };
 
-export const createUserProfile = (userId, data) => {
-    return axios.post(`${BASE_URL}/user/create`, data);
+export const createUserProfile = (userId, data, token, secret) => {
+    console.log("createUserProfile");
+    return axios.post(`${BASE_URL}/user/create/`, data, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            'Secret': secret
+        }
+    });
 };
 
 // ... any other user-related API functions
