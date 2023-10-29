@@ -100,3 +100,12 @@
     z-index: 3;
 }
 
+#whole #orSignGoogle{
+    .line{
+        width: 145px;
+        border: 1px;
+        rotate(-180 deg);
+        color: #3E48544D;
+        z-index: 3;
+    }
+}
