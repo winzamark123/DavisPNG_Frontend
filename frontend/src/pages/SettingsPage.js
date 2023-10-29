@@ -1,6 +1,6 @@
 import './settingsPage.scss'
 import DatePicker from 'react-datepicker';
-import { getUserProfile, createUserProfile } from '../api/user';
+import { getUserProfile, checkAndCreateUser } from '../api/user';
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
 import { faMars, faVenus, faTransgender, faDownLong, faCamera, faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -111,13 +111,13 @@ const SettingsPage = () => {
         // Now, send jsonData to your backend
         console.log(jsonData);
 
-        createUserProfile(jsonData).then(response => {
-            console.log("Success:", response.data);
-        })
-            .catch(error => {
-                console.log("Error:", error);
-            });
-        ;
+        // createUserProfile(jsonData).then(response => {
+        //     console.log("Success:", response.data);
+        // })
+        //     .catch(error => {
+        //         console.log("Error:", error);
+        //     });
+        // ;
     }
 
     return (
