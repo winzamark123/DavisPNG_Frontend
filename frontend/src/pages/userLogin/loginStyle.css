@@ -1,31 +1,102 @@
+#whole{
+    height:100%;
+    border: 2px solid red;
+}
+
 #backgroundPictures{
     #logo{
-        margin-left:604px;
-        margin-top:67px;
-        margin-bottom: 750px;
-        margin-right:603px;
+        left:604px;
+        top:67px;
         height:165px;
         width:305px;
         flex-shrink: 0;
-        z-index: 1;
+        z-index: 2;
+        position: absolute;
     }
     #cloud1{
-        margin-bottom: 577px;
-        margin-right: 276px;
-        margin-left: 723px;
-        margin-top: -105px;
-        z-index: 2;
+
+        right: 276px;
+        left: 723px;
+        top: -19px;
+        z-index: 1;
+        position: absolute;
     }
     #cloud2{
-
+        top:-55px;
+        right:1162px;
+        bottom:393px;
+        left:0;
+        position:absolute;
+        z-index:2;
     }
     #cloud3{
-
+        width: 360px;
+        height: 466px;
+        top: 90px;
+        right: 0;
+        position:absolute;
     }
     #cow{
-
+        width: 407px;
+        height: 260px;
+        flex-shrink: 0;
+        top: 111px;
+        right:1025px;
+        left:80px;
+        position:absolute;
+        z-index: 2;
     }
     #cloud4{
+        width: 999px;
+        height: 555px;
+        top: 66px;
+        left: -111px;
+        position:absolute;
+        z-index: 1;
+    }
+    #cloud5{
+        width: 283px;
+        height: 244px;
+        top: 335px;
+        left: 979px;
+        position:absolute;
+        z-index: 1;
 
     }
+    #cloud6{
+        width: 564px;
+        height: 511px;
+        bottom: 0px;
+        left: 55px;
+        rotate(-42.71deg);
+        position:absolute;
+        z-index:2;
+    }
+
+    #cloud7{
+        width: 500px;
+        height: 400px;
+        bottom: 0px;
+        right: 0px;
+        rotate(155.64 deg);
+        position:absolute;
+        z-index: 3;
+    }
 }
+
+.login{
+    left: 556px;
+    top:230px;
+    position:absolute;
+    z-index: 2;
+}
+
+#back{
+    width: 56px;
+    height: 56px;
+    bottom: 0px;
+    left: 0px;
+    position:absolute;
+    z-index: 3;
+}
+
