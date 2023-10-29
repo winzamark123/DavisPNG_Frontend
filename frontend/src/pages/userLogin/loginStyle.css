@@ -85,10 +85,15 @@
 }
 
 .login{
-    left: 556px;
+    display: block;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
     top:230px;
     position:absolute;
     z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #back{
