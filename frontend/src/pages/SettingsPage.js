@@ -1,10 +1,10 @@
 import './settingsPage.scss'
 import DatePicker from 'react-datepicker';
-import { getUserProfile } from '../api/user';
+import { getUserProfile, createUserProfile } from '../api/user';
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
-import { faMars, faVenus, faTransgender, faDownLong } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMars, faVenus, faTransgender, faDownLong, faCamera, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const SettingsPage = () => {
@@ -18,6 +18,7 @@ const SettingsPage = () => {
     const [userPronouns, setuserPronouns] = useState(null);
     const [school, setSchool] = useState("Davis, CA");
     const [priceRange, setPriceRange] = useState(0);
+
 
 
     const gender = {
@@ -72,8 +73,8 @@ const SettingsPage = () => {
             <div className="dropdown">
 
                 <button href="#" className="dropdown_BTN" onClick={() => setOpen(!open)}>
-                    {selectedText ? selectedText : "Select" + category}
-                    <FontAwesomeIcon icon={faDownLong} />
+                    {selectedText ? selectedText : "Select"}
+                    <FontAwesomeIcon icon={faChevronDown} />
                 </button>
 
                 {open && Object.values(items).map((item) => (
@@ -94,6 +95,7 @@ const SettingsPage = () => {
         const userData = {
             firstName: firstName,
             lastName: lastName,
+            middleName: middleName,
             username: username,
             birthDate: birthDate,
             gender: userGender,
@@ -108,7 +110,13 @@ const SettingsPage = () => {
 
         // Now, send jsonData to your backend
         console.log(jsonData);
-        sendToBackend(jsonData);
+        createUserProfile(jsonData).then(response => {
+            console.log("Success:", response.data);
+        })
+            .catch(error => {
+                console.log("Error:", error);
+            });
+        ;
     }
 
     function sendToBackend(data) {
@@ -145,8 +153,15 @@ const SettingsPage = () => {
 
                     <div className="settingsPage_left_container_body">
                         <div className="settingsPage_left_container_body_profile">
-                            <div className="settingsPage_left_container_body_profile_pic"></div>
-                            <div className="settingsPage_left_container_body_profile_edit"></div>
+                            <div className="settingsPage_left_container_body_profile_pic"
+                                style={{ backgroundImage: `url(${tempUser.profilePic})` }}
+                            ></div>
+                            <div className="settingsPage_left_container_body_profile_edit">
+                                <div className="settingsPage_left_container_body_profile_edit_camera">
+                                    <FontAwesomeIcon icon={faCamera} />
+                                </div>
+                            </div>
+
                         </div>
 
                         <div className="settingsPage_left_container_body_form">

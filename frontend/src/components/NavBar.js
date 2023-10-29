@@ -1,10 +1,34 @@
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth0, getTokenSilently } from '@auth0/auth0-react';
 import './NavBar.scss';
 import LoginBTN from './LoginBTN';
 import LogoutBTN from './LogoutBTN';
+import { useEffect } from 'react';
 
 const NavBar = () => {
-    const { user, isAuthenticated } = useAuth0();
+    const { user, isAuthenticated, getTokenSilently } = useAuth0();
+
+    const fetchTokenAndUserID = async () => {
+        if (isAuthenticated) {
+            try {
+                const token = await getTokenSilently();
+                const userID = user.sub.split('|')[1]; // extracting the userID from "auth0|USER_ID"
+
+                console.log("JWT Token:", token);
+                console.log("User ID:", userID);
+            } catch (error) {
+                console.error("Error fetching the token:", error);
+            }
+
+        } else {
+            console.log("User is not authenticated");
+        }
+    };
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            fetchTokenAndUserID();
+        }
+    }, [isAuthenticated]);
 
     return (
         isAuthenticated ? (
@@ -24,6 +48,7 @@ const NavBar = () => {
                     </li>
                     <li className="nav_items_item">
                         <LogoutBTN />
+                        {/* <LoginBTN /> */}
                     </li>
                 </ul>
             </div>

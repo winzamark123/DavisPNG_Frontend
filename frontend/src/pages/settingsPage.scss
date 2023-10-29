@@ -1,15 +1,16 @@
 //Color Palette
 $color-primary: #B1D1C6;
 $bg-color: rgba(31, 80, 63, 0.31);
-
-@import "~@flaticon/flaticon-uicons/css/all/all";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 .settingsPage{
+    font-family: 'Inter', sans-serif;
     width: 100vw;
     height: 100vh;
 
     display: flex;
-    background-color: $bg-color;
+    // background-color: $bg-color;
+    background-color: rgba(179, 179, 179, 0.88);
 
     align-items: center;
     // justify-content: center;
@@ -23,6 +24,7 @@ $bg-color: rgba(31, 80, 63, 0.31);
         display: flex;
         align-items: center;
         // justify-content: center;
+
     
         &_container{
             // width: 90%;
@@ -54,6 +56,42 @@ $bg-color: rgba(31, 80, 63, 0.31);
                     height: 125px;    
                     
                     margin: 60px;
+
+                    &_pic{
+                        width: 100%;
+                        height: 100%;
+        
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+        
+                        border-radius: 50%;        
+            
+                    }
+
+                    &_edit{
+                        width: 100%;
+                        display: flex;
+
+                        justify-content: flex-end;
+                        align-items: center;
+
+                        &_camera{
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+
+                            margin-top: -25px;
+                            border: 1px solid black;
+    
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+    
+                            cursor: pointer;
+                        }
+                        
+                    }
                 }
 
                 &_form{
@@ -68,8 +106,9 @@ $bg-color: rgba(31, 80, 63, 0.31);
                     input{
                         border-radius: 4px;
                         border: 1px solid rgba(62, 72, 84, 0.30);
-                        background: #FFF;
-                        height: 20px;
+                        background-color: transparent;
+                        height: 28px;
+                        width: 175px;
                     }
 
                     &_left{
@@ -134,89 +173,28 @@ $bg-color: rgba(31, 80, 63, 0.31);
 
 .dropdown{
     &_BTN{
-        border: 1px solid red; 
-        width: 100px;
-        height: 20px;
-
         display: flex;
-        justify-content: flex-end;
-    }
-}
-
-.settings{
-    height: 100%;
-    width: 100%;
-    
-    border: 1px solid brown;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    &_inner{
-        border: 1px solid blue;
-        width: 80%;
-        height: 80%;
-
-        display: flex;
-
-        &_left{
-            border: 1px solid green;
-            width: 50%;
-        }
-
-        &_prof{
-            border: 1px solid red;
-            width: 33%;
-            height: 100%;
-
-            display: flex;
-            // align-items: center;
-            justify-content: center;
-
-            &_pic{
-                width: 300px;
-                height: 300px;
-
-                background-size: 100%;
-                background-position: center;
-                background-repeat: no-repeat;
-
-                border-radius: 50%;
-    
-            }
-        }
-
-    }
-}
-
-.settings_lock{
-    position: absolute;
-    width: 105px;
-    height: 270px;
-
-    top: 40%;
-    left: 8%;
-    border-radius: 44px;
-    box-shadow: 6px 8px 10px 0px rgba(0, 0, 0, 0.25);
-    // border: 10px solid black;
-    background-color: $color-primary;
-
-    &_icons{
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        flex-direction: column;
-
-        justify-content: center;
+        width: 90px;
+        height: 28px;
+        padding: 14px 16px;
         align-items: center;
+        border-radius: 4px;
+        border: 1px solid rgba(62, 72, 84, 0.30);
 
-        font-size: 50px;
+        text-align: center;
 
-        i {
-            margin: 20px;
-        }
+        background: #FFF;
 
+        color: grey;
     }
+}
+
+/* For all labels and inputs within the left form */
+.settingsPage_left_container_body_form_left > div > div[class$="_label"]{
+    margin-bottom: 10px;/* Adjust value as needed */
+}
+
+/* For all labels and inputs within the right form */
+.settingsPage_left_container_body_form_right > div > div[class$="_label"]{
+    margin-bottom: 10px;/* Adjust value as needed */
 }

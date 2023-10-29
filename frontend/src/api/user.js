@@ -1,8 +1,9 @@
 // TEMPORARY MOCK API 
 
 // import axios from 'axios';
+import axios from 'axios';
 import tempProfile from '../assets/tempProfile.png';
-const BASE_URL = 'https://yourbackendurl.com/api';
+const BASE_URL = 'https://davispng.azurewebsites.net';
 
 const user = {
     ID: 1234,
@@ -25,6 +26,10 @@ export const getUserProfile = (userId) => {
 // Update user profile information
 export const updateUserProfile = (userId, data) => {
     // return axios.put(`${BASE_URL}/user/${userId}`, data);
+};
+
+export const createUserProfile = (userId, data) => {
+    return axios.post(`${BASE_URL}/user/create`, data);
 };
 
 // ... any other user-related API functions
