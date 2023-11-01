@@ -18,7 +18,8 @@ const SettingsPage = () => {
     const [userPronouns, setuserPronouns] = useState(null);
     const [school, setSchool] = useState("Davis, CA");
     const [priceRange, setPriceRange] = useState(0);
-
+    const [phoneNum, setPhoneNum] = useState("");
+    const [email, setEmail] = useState("");
 
 
     const gender = {
@@ -37,11 +38,6 @@ const SettingsPage = () => {
     function DropdownMenu({ items = {}, category }) {
         const [open, setOpen] = useState(false);
         const [selectedText, setSelectedText] = useState("");
-
-        // useEffect(() => {
-        //     console.log(selectedText); // This will log the updated value whenever selectedText changes
-        // }, [selectedText]);
-
 
         const handleSelect = (item) => {
 
@@ -102,7 +98,7 @@ const SettingsPage = () => {
             pronouns: userPronouns,
             school: "Davis, CA", // For now, as per your code
             priceRange: priceRange
-            //School 
+
 
         };
 
@@ -110,14 +106,6 @@ const SettingsPage = () => {
 
         // Now, send jsonData to your backend
         console.log(jsonData);
-
-        // createUserProfile(jsonData).then(response => {
-        //     console.log("Success:", response.data);
-        // })
-        //     .catch(error => {
-        //         console.log("Error:", error);
-        //     });
-        // ;
     }
 
     return (
@@ -223,15 +211,50 @@ const SettingsPage = () => {
                         <button onClick={updateSettings}>Update Settings</button>
                     </div>
 
-
-
-
-
-
-
                 </div>
             </div>
             <div className="settingsPage_right">
+                <div className="settingsPage_right_container">
+                    <div className="settingsPage_right_container_top">
+                        <div className="settingsPage_right_container_top_contact">
+                            <div className="settingsPage_right_container_top_contact_title">
+                                <span>CONTACT INFORMATION</span>
+                            </div>
+                            <div className="settingsPage_right_container_top_contact_body">
+                                <div className="settingsPage_right_container_top_contact_body_form">
+                                    <div className="settingsPage_right_container_top_contact_body_form_left">
+                                        <div className="settingsPage_right_container_top_contact_body_form_left_phone">
+                                            <div className="settingsPage_right_container_top_contact_body_form_left_phone_label">Phone</div>
+                                            <div className="settingsPage_right_container_top_contact_body_form_left_phone_input">
+                                                <input type="text"
+                                                    placeholder={tempUser.name}
+                                                    value={phoneNum}
+                                                    onChange={(e) => setPhoneNum(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="settingsPage_right_container_top_contact_body_form_left_email">
+                                            <div className="settingsPage_right_container_top_contact_body_form_left_email_label">Email</div>
+                                            <div className="settingsPage_right_container_top_contact_body_form_left_email_input">
+                                                <input type="text"
+                                                    placeholder={tempUser.name}
+                                                    value={email}
+                                                    onChange={(e) => setEmail(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="settingsPage_right_container_top_contact_body_form_right">
+                                        <div className="settingsPage_right_container_top_contact_body_form_right_insta"></div>
+                                        <div className="settingsPage_right_container_top_contact_body_form_right_FB"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="settingsPage_right_container_bottom"></div>
+                </div>
 
             </div>
             {/* <div className="settings_lock">
