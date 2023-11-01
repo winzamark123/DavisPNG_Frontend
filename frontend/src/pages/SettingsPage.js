@@ -20,6 +20,8 @@ const SettingsPage = () => {
     const [priceRange, setPriceRange] = useState(0);
     const [phoneNum, setPhoneNum] = useState("");
     const [email, setEmail] = useState("");
+    const [insta, setInsta] = useState("");
+    const [FB, setFB] = useState("");
 
 
     const gender = {
@@ -245,8 +247,26 @@ const SettingsPage = () => {
                                         </div>
                                     </div>
                                     <div className="settingsPage_right_container_top_contact_body_form_right">
-                                        <div className="settingsPage_right_container_top_contact_body_form_right_insta"></div>
-                                        <div className="settingsPage_right_container_top_contact_body_form_right_FB"></div>
+                                        <div className="settingsPage_right_container_top_contact_body_form_right_insta">
+                                            <div className="settingsPage_right_container_top_contact_body_form_right_insta_label">Instagram</div>
+                                            <div className="settingsPage_right_container_top_contact_body_form_right_insta_input">
+                                                <input type="text"
+                                                    placeholder={tempUser.name}
+                                                    value={insta}
+                                                    onChange={(e) => setInsta(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="settingsPage_right_container_top_contact_body_form_right_FB">
+                                            <div className="settingsPage_right_container_top_contact_body_form_right_FB_label">Facebook</div>
+                                            <div className="settingsPage_right_container_top_contact_body_form_right_FB_input">
+                                                <input type="text"
+                                                    placeholder={tempUser.name}
+                                                    value={FB}
+                                                    onChange={(e) => setFB(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
