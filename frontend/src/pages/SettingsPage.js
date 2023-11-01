@@ -23,6 +23,11 @@ const SettingsPage = () => {
     const [insta, setInsta] = useState("");
     const [FB, setFB] = useState("");
 
+    const [accountType, setAccountType] = useState("Photographer");
+
+    // const [isPhotographer, setIsPhotographer] = useState(false);
+    // const [isUser, setIsUser] = useState(false);
+
 
     const gender = {
         male: { text: "Male", icon: faMars },
@@ -89,6 +94,16 @@ const SettingsPage = () => {
 
     }
 
+    function handleChoice() {
+        if (accountType === "Photographer") {
+            // setIsPhotographer(true);
+            // setIsUser(false);
+        } else {
+            // setIsPhotographer(false);
+            // setIsUser(true);
+        }
+    }
+
     function updateSettings() {
         const userData = {
             firstName: firstName,
@@ -99,8 +114,8 @@ const SettingsPage = () => {
             gender: userGender,
             pronouns: userPronouns,
             school: "Davis, CA", // For now, as per your code
-            priceRange: priceRange
-
+            priceRange: priceRange,
+            accountType: accountType
 
         };
 
@@ -273,7 +288,16 @@ const SettingsPage = () => {
                         </div>
 
                     </div>
-                    <div className="settingsPage_right_container_bottom"></div>
+                    <div className="settingsPage_right_container_bottom">
+                        <div className="settingsPage_right_container_bottom_choice">
+                            <span>Choices</span>
+                            <input type="text"
+                                placeholder="Photographer"
+                                value={accountType}
+                                onChange={(e) => setAccountType(e.target.value)}
+                            />
+                        </div>
+                    </div>
                 </div>
 
             </div>

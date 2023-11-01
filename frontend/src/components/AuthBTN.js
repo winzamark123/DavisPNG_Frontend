@@ -42,7 +42,7 @@ const AuthBTN = () => {
         if (isAuthenticated) {
             // checkAndCreateUser(getAccessTokenSilently, user);
             //Temporary 
-            tempCreateUser();
+            // tempCreateUser();
         }
     }, [isAuthenticated]);
 
