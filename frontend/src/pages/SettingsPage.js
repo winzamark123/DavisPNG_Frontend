@@ -1,10 +1,11 @@
 import './settingsPage.scss'
 import DatePicker from 'react-datepicker';
-import { getUserProfile, checkAndCreateUser } from '../api/user';
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
 import { faMars, faVenus, faTransgender, faDownLong, faCamera, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getUserProfile, updateUserProfile } from '../api/user';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 const SettingsPage = () => {
@@ -24,7 +25,9 @@ const SettingsPage = () => {
     const [FB, setFB] = useState("");
 
     const [accountType, setAccountType] = useState("Photographer");
+    const [user_type, setUser_type] = useState(1); // 0 = Photographer, 1 = User
 
+    const { user, getAccessTokenSilently } = useAuth0();
     // const [isPhotographer, setIsPhotographer] = useState(false);
     // const [isUser, setIsUser] = useState(false);
 
@@ -105,17 +108,29 @@ const SettingsPage = () => {
     }
 
     function updateSettings() {
+
+        const formattedBirthDate = birthDate.toISOString().split('T')[0];
+
         const userData = {
-            firstName: firstName,
-            lastName: lastName,
-            middleName: middleName,
-            username: username,
-            birthDate: birthDate,
-            gender: userGender,
-            pronouns: userPronouns,
-            school: "Davis, CA", // For now, as per your code
-            priceRange: priceRange,
-            accountType: accountType
+
+            sub: user.sub,
+            gender_uuid: "761c4376-7058-11ee-b962-0242ac120002",
+            school_uuid: "0ab99bae-705a-11ee-b962-0242ac120002",
+            fname: firstName,
+            lname: lastName,
+            mname: middleName,
+            birthdate: formattedBirthDate,
+            // pronouns: userPronouns,
+            // school: "Davis, CA", // For now, as per your code
+            price: priceRange,
+            price_add_ons: 0,
+            price_photos: 0,
+            max_photos: 7,
+            is_photos_editable: 1,
+            max_photos_editable: 12,
+            description: "something here",
+
+            // user_type: user_type,
 
         };
 
@@ -123,6 +138,9 @@ const SettingsPage = () => {
 
         // Now, send jsonData to your backend
         console.log(jsonData);
+
+        updateUserProfile(user, getAccessTokenSilently, jsonData);
+
     }
 
     return (
@@ -171,7 +189,7 @@ const SettingsPage = () => {
 
                                 <div className="settingsPage_left_container_body_form_left_BD">
                                     <div className="settingsPage_left_container_body_form_left_BD_label">Birth Date</div>
-                                    <DatePicker selected={birthDate} onChange={(date) => setBirthDate(date)} />
+                                    <DatePicker selected={birthDate} onChange={(date) => setBirthDate(date)} dateFormat="yyyy-MM-dd" />
                                 </div>
 
                                 <div className="settings_Page_left_container_form_left_gender">
@@ -293,7 +311,7 @@ const SettingsPage = () => {
                             <span>Choices</span>
                             <input type="text"
                                 placeholder="Photographer"
-                                value={accountType}
+                                value={user_type}
                                 onChange={(e) => setAccountType(e.target.value)}
                             />
                         </div>

@@ -8,23 +8,6 @@ import { useEffect } from 'react';
 const NavBar = () => {
     const { user, isAuthenticated, getTokenSilently } = useAuth0();
 
-    const fetchTokenAndUserID = async () => {
-        if (isAuthenticated) {
-            try {
-                const token = await getTokenSilently();
-                const userID = user.sub.split('|')[1]; // extracting the userID from "auth0|USER_ID"
-
-                console.log("JWT Token:", token);
-                console.log("User ID:", userID);
-            } catch (error) {
-                console.error("Error fetching the token:", error);
-            }
-
-        } else {
-            console.log("User is not authenticated");
-        }
-    };
-
     return (
         isAuthenticated ? (
             <div className="nav_main_container">

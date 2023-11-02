@@ -20,43 +20,50 @@ const AboutUsPage = () => {
     return (
         (
             <div className="aboutUs">
-                {/* <NavBar /> */}
+                <NavBar />
 
                 <div className="aboutUs_section1">
-                    <div className="aboutUs_section1_hollowCloud"
+                    <div className="aboutUs_section1_coverBG"></div>
+                    <div className="aboutUs_section1_title"
+                        style={{ backgroundImage: `url(${svgImages['DavisPNGTitle.svg']})` }}
+                    ></div>
+                    <div className="aboutUs_section1_caption">
+                        <span style={{ fontFamily: "Gluten" }}>"Every Shot is a memory."</span>
+                    </div>
+                    <div className="aboutUs_section1_collage">
+
+                    </div>
+                </div>
+                <div className="aboutUs_section2">
+                    <div className="aboutUs_section2_hollowCloud"
                         style={{ backgroundImage: `url(${svgImages['hollowCloud.svg']})` }}
                     ></div>
-                    <div className="aboutUs_section1_topLeftCloud"
+                    <div className="aboutUs_section2_topLeftCloud"
                         style={{ backgroundImage: `url(${svgImages['topLeftCloud.svg']})` }}
                     ></div>
-                    <div className="aboutUs_section1_smallCloud"
+                    <div className="aboutUs_section2_smallCloud"
                         style={{ backgroundImage: `url(${svgImages['smallCloud.svg']})` }}
                     ></div>
 
-                    <div className="aboutUs_section1_topCenterCloud"
+                    <div className="aboutUs_section2_topCenterCloud"
                         style={{ backgroundImage: `url(${svgImages['topCenterCloud.svg']})` }}
                     ></div>
 
-                    <div className="aboutUs_section1_topRightCloud"
+                    <div className="aboutUs_section2_topRightCloud"
                         style={{ backgroundImage: `url(${svgImages['topRightCloud.svg']})` }}
                     ></div>
 
-                    <div className="aboutUs_section1_bottomRightCloud"
+                    <div className="aboutUs_section2_bottomRightCloud"
                         style={{ backgroundImage: `url(${svgImages['bottomRightCloud.svg']})` }}
                     ></div>
-                    <div className="aboutUs_section1_cowCloud"
+                    <div className="aboutUs_section2_cowCloud"
                         style={{ backgroundImage: `url(${svgImages['cowCloud.svg']})` }}
                     ></div>
 
-                    <div className="aboutUs_section1_Cow"
+                    <div className="aboutUs_section2_Cow"
                         style={{ backgroundImage: `url(${svgImages['Cow.svg']})` }}
                     ></div>
-
-                    <div className="aboutUs_section1_caption">
-                        <span style={{ fontFamily: "Gluten", color: "whitesmoke" }}>"Every Shot is a memory."</span>
-                    </div>
                 </div>
-                <div className="aboutUs_section2"></div>
                 <div className="aboutUs_section3"></div>
             </div>
         )

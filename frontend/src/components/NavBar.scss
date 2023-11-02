@@ -7,20 +7,24 @@ $light-color: #B1D1C6;
 .nav_main_container{
     width: 100%;
     height: 100px; 
-    background-color: whitesmoke;
+    background-color: transparent;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    color: whitesmoke; 
 }
 
 .nav_items{
-    border: 1px solid red; 
+    // border: 1px solid red; 
     list-style-type: none;
 
     display: flex;
     // justify-content: space-between;
     padding: 20px;
     margin-right: 120px;
+
+    color: whitesmoke;
     
     &_item{
         margin-right: 60px;
