@@ -54,6 +54,7 @@ export const getUserProfile = (userId) => {
 
 // Update user profile information
 export const updateUserProfile = (user, getAccessTokenSilently, data) => {
+    console.log(data);
     const { token, userID } = fetchTokenAndUserID(user, getAccessTokenSilently);
     return axios.put(`${BASE_URL}/user/update/user_type`, data, {
         headers: {

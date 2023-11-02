@@ -113,24 +113,35 @@ const SettingsPage = () => {
 
         const userData = {
 
-            sub: user.sub,
-            gender_uuid: "761c4376-7058-11ee-b962-0242ac120002",
-            school_uuid: "0ab99bae-705a-11ee-b962-0242ac120002",
-            fname: firstName,
-            lname: lastName,
-            mname: middleName,
-            birthdate: formattedBirthDate,
-            // pronouns: userPronouns,
-            // school: "Davis, CA", // For now, as per your code
-            price: priceRange,
-            price_add_ons: 0,
-            price_photos: 0,
-            max_photos: 7,
-            is_photos_editable: 1,
-            max_photos_editable: 12,
-            description: "something here",
+            // sub: user.sub,
+            // gender_uuid: "761c4376-7058-11ee-b962-0242ac120002",
+            // school_uuid: "0ab99bae-705a-11ee-b962-0242ac120002",
+            // fname: firstName,
+            // lname: lastName,
+            // mname: middleName,
+            // birthdate: formattedBirthDate,
+            // price: 0.00,
+            // price_add_ons: 0.00,
+            // price_photos: 0.00,
+            // max_photos: 7,
+            // is_photos_editable: 1,
+            // max_photos_editable: 12,
+            // description: "something here",
 
-            // user_type: user_type,
+            "sub": "auth0|651ded059c5325403aa3c479",
+            "gender_uuid": "761c4376-7058-11ee-b962-0242ac120002",
+            "school_uuid": "0ab99bae-705a-11ee-b962-0242ac120002",
+            "fname": "Win",
+            "lname": "Temp",
+            "birthdate": "2002-05-14",
+            "price": 0.00,
+            "price_add_ons": 0.00,
+            "price_photos": 0.00,
+            "max_photos": 7,
+            "is_photos_editable": 1,
+            "max_photos_editable": 12,
+            "description": "I shat my pants",
+            "contact": "Insta"
 
         };
 
