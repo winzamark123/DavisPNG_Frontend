@@ -26,8 +26,8 @@ export const fetchTokenAndUserID = async (user, getAccessTokenSilently) => {
         try {
             const token = await getAccessTokenSilently();
             const userID = user.sub.split('|')[1];
-            console.log("JWT Token:", token);
-            console.log("User ID:", userID);
+            // console.log("JWT Token:", token);
+            // console.log("User ID:", userID);
             return { token, userID };
         } catch (error) {
             console.error("Error fetching the token:", error);
@@ -45,28 +45,48 @@ export const tempCreateUser = async (user, getAccessTokenSilently) => {
     }
 };
 
-
 // Fetch user profile information
 export const getUserProfile = (userId) => {
     // return axios.get(`${BASE_URL}/user/${userId}`); 
     return user;
 };
 
-// Update user profile information
-export const updateUserProfile = (user, getAccessTokenSilently, data) => {
-    console.log(data);
-    const { token, userID } = fetchTokenAndUserID(user, getAccessTokenSilently);
+export const updateUserChoice = async (user, getAccessTokenSilently, data) => {
+    const { token } = fetchTokenAndUserID(user, getAccessTokenSilently);
     return axios.put(`${BASE_URL}/user/update/user_type`, data, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
-            'Secret': "this is update"
+            'Secret': "this is update choice"
         }
     }).then(response => {
-        console.log("Successfully updated user profile:", response.data);
+        console.log("Successfully update User Choice:", response.data);
         return response.data;
     }).catch(error => {
-        console.error("Error updating user profile:", error);
+        console.error("Error updating user Choice:", error);
+        console.log('Response data:', error.response.data);
+        console.log('Response status:', error.response.status);
+        console.log('Response headers:', error.response.headers);
+        // throw error; // This will ensure that the error is propagated to the caller for further handling if needed.
+    }
+    )
+};
+
+// Update photographer profile information
+export const updateUserProfile = (user, getAccessTokenSilently, data) => {
+    console.log(data);
+    const { token } = fetchTokenAndUserID(user, getAccessTokenSilently);
+    return axios.put(`${BASE_URL}/photographer/update/`, data, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            'Secret': "this is update info"
+        }
+    }).then(response => {
+        console.log("Successfully updated photographer profile:", response.data);
+        return response.data;
+    }).catch(error => {
+        console.error("Error updating photographer profile:", error);
         console.log('Response data:', error.response.data);
         console.log('Response status:', error.response.status);
         console.log('Response headers:', error.response.headers);

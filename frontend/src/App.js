@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import PhotographersPage from './pages/PhotographersPage';
 import AboutUsPage from './pages/AboutUsPage';
 import SettingsPage from './pages/SettingsPage';
+import ChoicePage from './pages/ChoicePage';
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,6 +28,7 @@ function App() {
           <Route path="/photographers" element={<PhotographersPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/choice" element={<ChoicePage />} />
           <Route path="*" element={NotFound} />
         </Routes>
       </Router>
