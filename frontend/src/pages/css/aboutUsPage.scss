@@ -1,0 +1,45 @@
+$bg-color: #0F3451;
+$light-bg: #B1D1C6;
+$dark-font: #001846;
+$light-font: #F0F0F0;
+$pop-gold: #CEA64E;
+
+
+.aboutUs{
+    width: 100%;
+    height: 2147px;
+
+    background-color: $bg-color;
+
+    &_section1{
+        height: 682px; 
+
+        &_hollowCloud{
+            background-size: contain;
+            background-position: center;
+
+            image-rendering: pixelated;
+            width: 300px;
+            height: 300px;
+
+
+            border:1px solid red;
+        }
+    }
+
+    &_section2{
+        height: 718px; 
+        background-color: rgba(177, 209, 198, 0.85);
+
+        box-shadow: 15px 15px 25px 0px rgba(0, 0, 0, 0.25) inset;
+
+        clip-path: polygon(
+            0 0,
+            0% 0,
+            100% 20%,
+            100% 100%,
+            0 100%
+        )
+
+    }
+}
