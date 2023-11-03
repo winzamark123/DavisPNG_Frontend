@@ -15,7 +15,6 @@ function importAllSVGs(r) {
 
 const svgImages = importAllSVGs(require.context('../assets/aboutUs_assets', false, /\.svg$/));
 const AboutUsPage = () => {
-    const { user, isAuthenticated } = useAuth0();
 
     return (
         (
@@ -34,6 +33,10 @@ const AboutUsPage = () => {
 
                     </div>
                 </div>
+                <div className="aboutUs_topRightCloud"
+                    style={{ backgroundImage: `url(${svgImages['topRightCloud.svg']})` }}
+                ></div>
+
                 <div className="aboutUs_section2">
                     <div className="aboutUs_section2_hollowCloud"
                         style={{ backgroundImage: `url(${svgImages['hollowCloud.svg']})` }}
@@ -49,12 +52,11 @@ const AboutUsPage = () => {
                         style={{ backgroundImage: `url(${svgImages['topCenterCloud.svg']})` }}
                     ></div>
 
-                    <div className="aboutUs_section2_topRightCloud"
-                        style={{ backgroundImage: `url(${svgImages['topRightCloud.svg']})` }}
-                    ></div>
-
                     <div className="aboutUs_section2_bottomRightCloud"
                         style={{ backgroundImage: `url(${svgImages['bottomRightCloud.svg']})` }}
+                    ></div>
+                    <div className="aboutUs_section2_backgroundCloud"
+                        style={{ backgroundImage: `url(${svgImages['backgroundCloud.svg']})` }}
                     ></div>
                     <div className="aboutUs_section2_cowCloud"
                         style={{ backgroundImage: `url(${svgImages['cowCloud.svg']})` }}
@@ -65,7 +67,7 @@ const AboutUsPage = () => {
                     ></div>
                 </div>
                 <div className="aboutUs_section3"></div>
-            </div>
+            </div >
         )
     )
 }
