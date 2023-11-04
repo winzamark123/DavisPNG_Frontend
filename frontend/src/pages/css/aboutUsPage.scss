@@ -5,10 +5,12 @@ $light-font: #F0F0F0;
 $pop-gold: #CEA64E;
 
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
 
 .aboutUs{
     width: 100%;
-    height: 2147px;
+    height: 3200px;
 
     background-color: $bg-color;
 
@@ -181,8 +183,8 @@ $pop-gold: #CEA64E;
             height: 500px;
 
             position: absolute;
-            margin-top: 400px;
-            right: 200px;
+            margin-top: 300px;
+            right: 0px;
         }
 
         &_cowCloud{
@@ -196,52 +198,167 @@ $pop-gold: #CEA64E;
 
             position: absolute;
 
-            margin-top: 700px;
-            left: 600px;
+            margin-top: 600px;
+            left: 1200px;
 
             // border: 1px solid red;
 
             z-index: 3;
         }
 
-        &_Cow{
+        &_Cow2{
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
 
             image-rendering:crisp-edges;
-            width: 300px;
-            height: 600px;
+            width: 450px;
+            height: 450px;
 
             position: absolute;
-            top: 100px;
-            left: 430px;
+            margin-top: 300px;
+            left: 60%;
 
             // border: 1px solid red;
 
             z-index: 5;
         }
 
-        &_caption{
+        &_text{
             // border: 1px solid red;
-            width: 800px;
-            height: 140px;
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
 
             position: absolute;
-            top: 400px;
-            left: 750px;
-            
-            span{
-                font-size: 45px;
-                letter-spacing: 3.6px;
+            margin-top: 22%;
+            left: 40%;
+
+            width: 540px;
+
+
+            transform: translate(-50%, -50%);
+            text-align: start;
+
+            color: whitesmoke;
+            &_title{
+                margin-bottom: 80px; 
+                
+                span{
+                    font-size: 2rem;
+                }
             }
+
+            &_info{
+                font-size: 1.5rem;
+                line-height: normal;
+            }
+        }
+    }
+
+    &_section3{
+        height: 860px;
+        background-color: #B1D1C6;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &_title{
+            // border: 1px solid black; 
+            margin-right: 80px;
+            span{
+                font-size: 2.5rem;
+            }
+        }
+
+        &_info{
+            // border: 1px solid red;
+            margin-top: -20px;
+            width: 60%;
+            height: 50%;
+
+            display: flex;
+
+            span{
+                font-family: 'Lora', serif;
+                font-size: 1.5rem;
+
+                width: 100%;
+            }
+
             
 
+            &_left{
+                width: 33%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                &_img{
+                    width: 70%;
+                    height: 70%;
+
+                    // border: 1px solid red;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+
+                    image-rendering:crisp-edges;
+                }
+            }
+
+            &_mid{
+                width: 33%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                &_img{
+                    width: 70%;
+                    height: 70%;
+
+                    // border: 1px solid red;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+
+                    image-rendering:crisp-edges;
+                }
+            }
+
+            &_right{
+                width: 33%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                &_img{
+                    width: 70%;
+                    height: 70%;
+
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+
+                    image-rendering:crisp-edges;
+                }
+            }
+
         }
+    }
+
+    &_section4{
+        height: 200px;
+        width: 100%;
+        
+        border: 1px solid pink;
     }
 }

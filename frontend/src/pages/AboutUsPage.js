@@ -55,18 +55,56 @@ const AboutUsPage = () => {
                     <div className="aboutUs_section2_bottomRightCloud"
                         style={{ backgroundImage: `url(${svgImages['bottomRightCloud.svg']})` }}
                     ></div>
-                    <div className="aboutUs_section2_backgroundCloud"
+                    {/* <div className="aboutUs_section2_backgroundCloud"
                         style={{ backgroundImage: `url(${svgImages['backgroundCloud.svg']})` }}
-                    ></div>
-                    <div className="aboutUs_section2_cowCloud"
+                    ></div> */}
+                    {/* <div className="aboutUs_section2_cowCloud"
                         style={{ backgroundImage: `url(${svgImages['cowCloud.svg']})` }}
-                    ></div>
+                    ></div> */}
 
-                    <div className="aboutUs_section2_Cow"
-                        style={{ backgroundImage: `url(${svgImages['Cow.svg']})` }}
+                    <div className="aboutUs_section2_Cow2"
+                        style={{ backgroundImage: `url(${svgImages['Cow2.svg']})` }}
                     ></div>
+                    <div className="aboutUs_section2_text">
+                        <div className="aboutUs_section2_text_title">
+                            <span style={{ fontFamily: "Mada", fontWeigh: 700 }}>About Us</span>
+                        </div>
+                        <div className="aboutUs_section2_text_info">
+                            <span style={{ fontFamily: "Mada", fontWeight: 500 }}>We are a group of students from UC Davis who are passionate about photography. We started this project to help people find the perfect photographer for their special events. We hope that our website can help you find the photographer that you are looking for!</span>
+                        </div>
+
+                    </div>
                 </div>
-                <div className="aboutUs_section3"></div>
+                <div className="aboutUs_section3">
+                    <div className="aboutUs_section3_title">
+                        <span style={{ fontFamily: "Lora", fontWeight: 700 }}>CAPTURE YOUR MOMENT</span>
+                    </div>
+                    <div className="aboutUs_section3_info">
+                        <div className="aboutUs_section3_info_left">
+                            <div className="aboutUs_section3_info_left_img"
+                                style={{ backgroundImage: `url(${svgImages['cowAndCam.svg']})` }}>
+                            </div>
+                            <span>Find your photographer.</span>
+                        </div>
+                        <div className="aboutUs_section3_info_mid">
+                            <div className="aboutUs_section3_info_mid_img"
+                                style={{ backgroundImage: `url(${svgImages['cowChat.svg']})` }}>
+                            </div>
+                            <span>Create an account to chat with our photographers</span>
+                        </div>
+                        <div className="aboutUs_section3_info_right">
+                            <div className="aboutUs_section3_info_right_img"
+                                style={{ backgroundImage: `url(${svgImages['book.svg']})` }}
+                            ></div>
+                            <span>Make your bookings.</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="aboutUs_section4">
+                    
+                </div>
             </div >
         )
     )
