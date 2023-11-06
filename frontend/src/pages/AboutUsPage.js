@@ -78,7 +78,7 @@ const AboutUsPage = () => {
                 </div>
                 <div className="aboutUs_section3">
                     <div className="aboutUs_section3_title">
-                        <span style={{ fontFamily: "Lora", fontWeight: 700 }}>CAPTURE YOUR MOMENT</span>
+                        <span style={{ fontFamily: "Mada", fontWeight: 700 }}>CAPTURE YOUR MOMENT</span>
                     </div>
                     <div className="aboutUs_section3_info">
                         <div className="aboutUs_section3_info_left">
@@ -100,6 +100,9 @@ const AboutUsPage = () => {
                             <span>Make your bookings.</span>
                         </div>
 
+                    </div>
+                    <div className="aboutUs_section3_button">
+                        <span>Get Started</span>
                     </div>
                 </div>
 

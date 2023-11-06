@@ -4,9 +4,9 @@ $dark-font: #001846;
 $light-font: #F0F0F0;
 $pop-gold: #CEA64E;
 
-@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mada:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
 
 .aboutUs{
     width: 100%;
@@ -239,8 +239,8 @@ $pop-gold: #CEA64E;
             // border: 1px solid red;
 
             position: absolute;
-            margin-top: 22%;
-            left: 40%;
+            margin-top: 15%;
+            left: 45%;
 
             width: 540px;
 
@@ -266,7 +266,7 @@ $pop-gold: #CEA64E;
 
     &_section3{
         width: 1440px;
-        height: 860px;
+        height: 665px;
         background-color: #B1D1C6;
 
         display: flex;
@@ -367,6 +367,24 @@ $pop-gold: #CEA64E;
 
                     image-rendering:crisp-edges;
                 }
+            }
+
+        }
+        &_button{
+            width: 186px;
+            height: 55px;
+            border-radius: 32px;
+            
+            background-color: #CEA64E;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span{
+                font-family: "Mada", sans-serif;
+                font-size: 19px;
+                font-weight: 700;
             }
 
         }
