@@ -5,6 +5,7 @@ import PhotographersPage from './pages/PhotographersPage';
 import AboutUsPage from './pages/AboutUsPage';
 import SettingsPage from './pages/SettingsPage';
 import ChoicePage from './pages/ChoicePage';
+import LandingPage from './pages/LandingPage';
 import {
   BrowserRouter as Router,
   Routes,
@@ -29,6 +30,7 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/choice" element={<ChoicePage />} />
+          <Route path="/landing" element={<LandingPage />} />
           <Route path="*" element={NotFound} />
         </Routes>
       </Router>

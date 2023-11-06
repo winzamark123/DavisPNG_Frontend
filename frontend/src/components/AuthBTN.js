@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { tempCreateUser, fetchTokenAndUserID, createUserProfile } from '../api/user';
+import "./authBTN.scss";
 const AuthBTN = () => {
     const { loginWithRedirect, logout, isAuthenticated, user, getAccessTokenSilently } = useAuth0();
 
@@ -25,9 +26,9 @@ const AuthBTN = () => {
 
     return (
         <>
-            <button onClick={handleClick}>
-                {isAuthenticated ? "Log Out" : "Log In"}
-            </button>
+            <span className = "AuthButton" onClick={handleClick}>
+                {isAuthenticated ? "Log Out" : "LogIn/SignUP"}
+            </span>
         </>
     );
 }

@@ -2,7 +2,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import './css/aboutUsPage.scss';
 import NavBar from "../components/NavBar";
 import tempUser from '../api/user';
-import logo from '../logo.svg'
+import logo from '../logo.svg';
+import LandingPage from "./LandingPage";
 
 function importAllSVGs(r) {
     let images = {};
@@ -27,7 +28,7 @@ const AboutUsPage = () => {
                         style={{ backgroundImage: `url(${svgImages['DavisPNGTitle.svg']})` }}
                     ></div>
                     <div className="aboutUs_section1_caption">
-                        <span style={{ fontFamily: "Gluten" }}>"Every Shot is a memory."</span>
+                        <span style={{ fontFamily: "Mada" }}>Every Shot is a memory.</span>
                     </div>
                     <div className="aboutUs_section1_collage">
 
@@ -103,8 +104,9 @@ const AboutUsPage = () => {
                 </div>
 
                 <div className="aboutUs_section4">
-                    
+
                 </div>
+                {/* <LandingPage /> */}
             </div >
         )
     )

@@ -9,10 +9,29 @@ $light-color: #B1D1C6;
     height: 100px; 
     background-color: transparent;
     display: flex;
-    justify-content: flex-end;
+
+    justify-content: space-between;
     align-items: center;
 
     color: whitesmoke; 
+
+    font-family: "Mada", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+
+    // border: 1px solid red; 
+
+
+}
+.nav_logo{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 80px;
+    height: 60px;
+
+    margin-left: 120px;
+
 }
 
 .nav_items{
@@ -32,6 +51,11 @@ $light-color: #B1D1C6;
 
         &:last-child{
             margin-right: 0px;
+        }
+
+        a{
+            color: whitesmoke; 
+            text-decoration: none;
         }
     }
 }
