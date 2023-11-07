@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { tempCreateUser, fetchTokenAndUserID, createUserProfile } from '../api/user';
-import "./authBTN.scss";
+import "./cssComp/authBTN.scss";
 const AuthBTN = () => {
     const { loginWithRedirect, logout, isAuthenticated, user, getAccessTokenSilently } = useAuth0();
 

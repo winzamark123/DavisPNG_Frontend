@@ -1,5 +1,5 @@
 import { useAuth0, getTokenSilently } from '@auth0/auth0-react';
-import './NavBar.scss';
+import "./cssComp/NavBar.scss";
 import AuthBTN from './AuthBTN';
 import logo from '../assets/logo.svg';
 import { useEffect } from 'react';
@@ -32,7 +32,7 @@ const NavBar = () => {
             </div>
         ) : ( //User NOT LOGGEDIN
             <div className="nav_main_container">
-                <div className="nav_logo" style={{backgroundImage: `url(${logo})`}}></div>
+                <div className="nav_logo" style={{ backgroundImage: `url(${logo})` }}></div>
                 <ul className="nav_items">
 
                     <li className="nav_items_item">

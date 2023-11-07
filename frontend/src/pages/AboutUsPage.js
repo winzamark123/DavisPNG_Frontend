@@ -1,9 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import './css/aboutUsPage.scss';
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+
 import tempUser from '../api/user';
 import logo from '../logo.svg';
 import LandingPage from "./LandingPage";
+
 
 function importAllSVGs(r) {
     let images = {};
@@ -110,7 +113,9 @@ const AboutUsPage = () => {
 
                 </div>
                 {/* <LandingPage /> */}
+                <Footer />
             </div >
+            
         )
     )
 }
