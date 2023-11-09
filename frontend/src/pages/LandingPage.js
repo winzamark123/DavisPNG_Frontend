@@ -1,5 +1,7 @@
 import React from 'react'
 import './css/landingPage.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 const LandingPage = () => {
     return (
@@ -14,14 +16,26 @@ const LandingPage = () => {
                 </div>
             </div>
             <div className="landing_content">
-                <div className="landing_content_title">
-                    <span >UC Davis Photographer Platform</span>
+                <div className="landing_content_form">
+                    <div className="landing_content_form_title">
+                        <span >UC Davis Photographer Platform</span>
+                    </div>
+                    <div className="landing_content_form_body">
+                        <span id="ComingSoon">Website Coming Soon <span style={{ color: "#B1D1C6", fontWeight: 600 }}>This Winter Graduation!</span></span>
+                        <span className="landing_content_form_body_getNoti">Get <span style={{ color: "$pop-gold" }}>Notified</span></span>
+                        <span id="Launch">When We Launch</span>
+                        <span id="spam">Dont Worry we promise we won't spam :3</span>
+
+                        <form>
+                            <input type="text" placeholder="Email Address" />
+                            <button type="submit">
+                                <span>Notify Me</span>
+                                <FontAwesomeIcon icon={faEnvelope} />
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <div className="landing_content_body">
-                    <span id="ComingSoon">Website Coming Soon This Winter Graduation!</span>
-                    <span>Get <span style={{color: "$pop-gold"}}>Notified</span></span>
-                    <span>When We Launch</span>
-                </div>
+
             </div>
 
         </div>
