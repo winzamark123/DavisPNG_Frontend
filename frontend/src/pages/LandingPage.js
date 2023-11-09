@@ -15,7 +15,12 @@ const LandingPage = () => {
             </div>
             <div className="landing_content">
                 <div className="landing_content_title">
-                    <span>UC Davis Photographer Platform</span>
+                    <span >UC Davis Photographer Platform</span>
+                </div>
+                <div className="landing_content_body">
+                    <span id="ComingSoon">Website Coming Soon This Winter Graduation!</span>
+                    <span>Get <span style={{color: "$pop-gold"}}>Notified</span></span>
+                    <span>When We Launch</span>
                 </div>
             </div>
 
