@@ -2,6 +2,7 @@ import React from 'react'
 import './css/landingPage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import barCam from '../assets/landingPage_assets/barCam.svg';
 
 const LandingPage = () => {
     return (
@@ -34,6 +35,10 @@ const LandingPage = () => {
                             </button>
                         </form>
                     </div>
+                </div>
+                <div className="landing_content_loadBar">
+                    <div className="landing_content_loadBar_loader"></div>
+                    <div className="landing_content_loadBar_barCam" style={{ backgroundImage: `url(${barCam})` }}></div>
                 </div>
 
             </div>
