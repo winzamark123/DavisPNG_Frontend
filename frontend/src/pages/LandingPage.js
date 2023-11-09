@@ -4,8 +4,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import barCam from '../assets/landingPage_assets/barCam.svg';
 import workingCow from '../assets/landingPage_assets/workingCow.svg';
+import { emailSignUp } from '../api/user';
+import { useState } from 'react';
 
 const LandingPage = () => {
+    const [email, setEmail] = useState("");
+
+    function handleSendEmail() {
+
+        if (email === "") {
+            alert("Please enter a valid email address");
+            return;
+        }
+
+        const userEmail = {
+            email: email
+        };
+
+        const jsonData = JSON.stringify(userEmail);
+        console.log(jsonData);
+
+        emailSignUp(jsonData);
+    }
+
     return (
         <div className="landing">
             <div className="landing_background">
@@ -29,8 +50,8 @@ const LandingPage = () => {
                         <span id="spam">Dont Worry we promise we won't spam :3</span>
 
                         <form>
-                            <input type="text" placeholder="Email Address" />
-                            <button type="submit">
+                            <input type="text" placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} />
+                            <button type="submit" onClick={handleSendEmail}>
                                 <span>Notify Me</span>
                                 <FontAwesomeIcon icon={faEnvelope} />
                             </button>

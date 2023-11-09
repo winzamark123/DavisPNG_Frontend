@@ -94,6 +94,20 @@ export const updateUserProfile = (user, getAccessTokenSilently, data) => {
     }
     )
 };
+export const emailSignUp = async (email) => {
+    console.log("EmailSignUp:", email);
+    return axios.post(`${BASE_URL}/landing/`, email, {
+    }).then(response => {
+        console.log("Successfully sent email:", response.data);
+        return response.data;
+    }).catch(error => {
+        console.error("Error sending email:", error);
+        console.log('Response data:', error.response.data);
+        console.log('Response status:', error.response.status);
+        console.log('Response headers:', error.response.headers);
+        // throw error; // This will ensure that the error is propagated to the caller for further handling if needed.
+    });
+}
 
 export const createUserProfile = (data, getAccessTokenSilently) => {
     console.log("createUserProfile");
@@ -141,5 +155,7 @@ export const checkAndCreateUser = async (token, userData) => {
         console.error("Error:", error);
     }
 };
+
+
 
 // ... any other user-related API functions
