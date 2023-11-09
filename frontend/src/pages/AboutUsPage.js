@@ -42,6 +42,19 @@ const AboutUsPage = () => {
                 <div className="aboutUs_topRightCloud"
                     style={{ backgroundImage: `url(${svgImages['topRightCloud.svg']})` }}
                 ></div>
+                <div className="aboutUs_topLeftCloud"
+                    style={{ backgroundImage: `url(${svgImages['topLeftCloud.svg']})` }}
+                ></div>
+                <div className="aboutUs_backgroundCloud"
+                    style={{ backgroundImage: `url(${svgImages['backgroundCloud.svg']})` }}
+                ></div>
+                <div className="aboutUs_cowCloud"
+                    style={{ backgroundImage: `url(${svgImages['cowCloud.svg']})` }}
+                ></div>
+                <div className="aboutUs_topCenterCloud"
+                    style={{ backgroundImage: `url(${svgImages['topCenterCloud.svg']})` }}
+                ></div>
+            
 
                 <div className="aboutUs_section2_background">
                     <div className="aboutUs_section2">

@@ -16,6 +16,81 @@ $pop-gold: #CEA64E;
     align-items: center;
 
 
+    &_topRightCloud{
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 430px;
+        height: 430px;
+
+        position: absolute;
+        z-index: 5;
+        top: 600px;
+        right: 0px;
+
+        // border: 1px solid red;
+    }
+
+    &_topLeftCloud{
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 430px;
+        height: 430px;
+
+        position: absolute;
+        z-index: 5;
+        top: 800px;
+        left: 0px;
+    }
+
+    &_backgroundCloud{
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 430px;
+        height: 430px;
+
+        position: absolute;
+        z-index: 5;
+        top: 1200px;
+        right: 0px;
+    }
+
+    &_cowCloud{
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 430px;
+        height: 430px;
+
+        position: absolute;
+        z-index: 5;
+        top: 1200px;
+        left: 500px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    &_topCenterCloud{
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 430px;
+        height: 430px;
+
+        position: absolute;
+        z-index: 5;
+        top: 200px;
+        left: 500px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
     &_section1{
 
         &_background{
@@ -41,18 +116,22 @@ $pop-gold: #CEA64E;
         text-align: center;
 
         &_coverBG{
+            z-index: 2;
+
             background-image: url("../../assets/aboutUs_assets/coverBG.png");    
             background-size: cover;
             background-repeat: no-repeat;
             width: 70%;
             height: 90%;
             border-radius: 44px; 
+            background-color: #0F3451;
 
             margin-right: 156px;
             margin-left: 156px;
         }
 
         &_title{
+            z-index: 3;
             width: 665px;
             height: 98px;
 
@@ -92,21 +171,6 @@ $pop-gold: #CEA64E;
             box-shadow: 15px 15px 25px 0px rgba(0, 0, 0, 0.25) inset;
 
         }
-    }
-    &_topRightCloud{
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        image-rendering:crisp-edges;
-        width: 430px;
-        height: 430px;
-
-        position: absolute;
-        z-index: 5;
-        top: 800px;
-        right: 0px;
-
-        // border: 1px solid red;
     }
 
     &_section2{
