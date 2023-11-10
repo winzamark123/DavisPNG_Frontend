@@ -129,26 +129,26 @@ const SettingsPage = () => {
             // description: "something here",
 
             sub: user.sub,
-            "gender_uuid": "761c4376-7058-11ee-b962-0242ac120002",
-            "school_uuid": "0ab99bae-705a-11ee-b962-0242ac120002",
-            "fname": "Win",
-            "lname": "Temp",
-            "birthdate": formattedBirthDate,
-            "price": 0.00,
-            "price_add_ons": 0.00,
-            "price_photos": 0.00,
-            "max_photos": 7,
-            "is_photos_editable": 1,
-            "max_photos_editable": 12,
-            "description": "I shat my pants",
-            "contact": "Insta"
+            school_uuid: "0ab99bae-705a-11ee-b962-0242ac120002",
+            fname: "Win",
+            lname: "Temp",
+            gender: "Male",
+            birthdate: formattedBirthDate,
+            price: 1.00,
+            price_add_ons: 0.00,
+            price_photos: 1,
+            max_photos: 7,
+            is_photos_editable: 1,
+            max_photos_editable: 12,
+            description: "I shat my pants",
+            contact: "Insta"
 
         };
 
         const jsonData = JSON.stringify(userData);
 
         // Now, send jsonData to your backend
-        console.log(jsonData);
+        // console.log(jsonData);
 
         updateUserProfile(user, getAccessTokenSilently, jsonData);
 

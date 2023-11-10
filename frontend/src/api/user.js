@@ -90,23 +90,33 @@ export const updateUserProfile = (user, getAccessTokenSilently, data) => {
         console.log('Response data:', error.response.data);
         console.log('Response status:', error.response.status);
         console.log('Response headers:', error.response.headers);
-        // throw error; // This will ensure that the error is propagated to the caller for further handling if needed.
+        throw error; // This will ensure that the error is propagated to the caller for further handling if needed.
     }
     )
 };
+//signup email for the landing page 
 export const emailSignUp = async (email) => {
     console.log("EmailSignUp:", email);
-    return axios.post(`${BASE_URL}/landing/`, email, {
-    }).then(response => {
-        console.log("Successfully sent email:", response.data);
-        return response.data;
-    }).catch(error => {
-        console.error("Error sending email:", error);
-        console.log('Response data:', error.response.data);
-        console.log('Response status:', error.response.status);
-        console.log('Response headers:', error.response.headers);
-        // throw error; // This will ensure that the error is propagated to the caller for further handling if needed.
-    });
+
+    //No need for Authorization and Secret headers
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+
+    return axios.post(`${BASE_URL}/landing/`, email, { headers })
+        .then(response => {
+            console.log("Successfully sent email:", response.data);
+            return response.data;
+        })
+        .catch(error => {
+            console.error("Error sending email:", error);
+            if (error.response) {
+                console.log('Response data:', error.response.data);
+                console.log('Response status:', error.response.status);
+                console.log('Response headers:', error.response.headers);
+            }
+            // throw error; // Uncomment this if you want to propagate the error to the caller
+        });
 }
 
 export const createUserProfile = (data, getAccessTokenSilently) => {
@@ -140,21 +150,21 @@ export const createUserProfile = (data, getAccessTokenSilently) => {
         });
 };
 
-export const checkAndCreateUser = async (token, userData) => {
-    try {
-        const checkResponse = await axios.get(`${BASE_URL}/user/`, {
-            headers: {
-                'Authorization': `Bearer ${token}`,
-            },
-        });
+// export const checkAndCreateUser = async (token, userData) => {
+//     try {
+//         const checkResponse = await axios.get(`${BASE_URL}/user/`, {
+//             headers: {
+//                 'Authorization': `Bearer ${token}`,
+//             },
+//         });
 
-        if (!checkResponse.data.userExists) {
-            await createUserProfile(userData.sub.split('|')[1], userData, token, checkResponse.data.secret);
-        }
-    } catch (error) {
-        console.error("Error:", error);
-    }
-};
+//         if (!checkResponse.data.userExists) {
+//             await createUserProfile(userData.sub.split('|')[1], userData, token, checkResponse.data.secret);
+//         }
+//     } catch (error) {
+//         console.error("Error:", error);
+//     }
+// };
 
 
 

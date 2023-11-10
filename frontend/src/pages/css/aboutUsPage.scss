@@ -410,7 +410,7 @@ $pop-gold: #CEA64E;
     &_section4{
         height: 200px;
         width: 100%;
-        
-        border: 1px solid pink;
+        overflow: hidden;   
+        // border: 1px solid pink;
     }
 }

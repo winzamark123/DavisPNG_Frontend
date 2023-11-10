@@ -10,7 +10,8 @@ import { useState } from 'react';
 const LandingPage = () => {
     const [email, setEmail] = useState("");
 
-    function handleSendEmail() {
+    function handleSendEmail(event) {
+        event.preventDefault();
 
         if (email === "") {
             alert("Please enter a valid email address");

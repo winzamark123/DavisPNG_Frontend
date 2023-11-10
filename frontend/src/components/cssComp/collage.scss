@@ -1,11 +1,16 @@
+// $Duration = (Width of All Images / 2) / scroll speed;
+// $totalImgWidth: 2000px;
+
+
+
 .collage{
     &_carousel{
         display: flex;
-        overflow: hidden; /* Updated to hide the scrollbar */
+        // overflow: hidden; /* Updated to hide the scrollbar */
         white-space: nowrap;
         scroll-behavior: smooth;
     
-        animation: autoScrollX 30s linear infinite;
+        animation: autoScrollX linear infinite;
         &_item{
             flex: 0 0 auto; /* Do not grow, do not shrink, base width on content */
             height: 200px; /* Set a fixed height for all images */
@@ -24,6 +29,6 @@
         transform: translateX(0);
     }
     100%{
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 }
