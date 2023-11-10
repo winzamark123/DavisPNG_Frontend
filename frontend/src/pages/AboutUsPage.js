@@ -3,9 +3,7 @@ import './css/aboutUsPage.scss';
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-import tempUser from '../api/user';
-import logo from '../logo.svg';
-import LandingPage from "./LandingPage";
+import Collage from "../components/Collage";
 
 
 function importAllSVGs(r) {
@@ -54,7 +52,11 @@ const AboutUsPage = () => {
                 <div className="aboutUs_topCenterCloud"
                     style={{ backgroundImage: `url(${svgImages['topCenterCloud.svg']})` }}
                 ></div>
-            
+                <div className="aboutUs_smallCloud"
+                    style={{ backgroundImage: `url(${svgImages['smallCloud.svg']})` }}
+                ></div>
+
+
 
                 <div className="aboutUs_section2_background">
                     <div className="aboutUs_section2">
@@ -105,9 +107,8 @@ const AboutUsPage = () => {
                     </div>
                 </div>
                 <div className="aboutUs_section4">
-
+                    <Collage />
                 </div>
-                {/* <LandingPage /> */}
                 <Footer />
             </div >
 
