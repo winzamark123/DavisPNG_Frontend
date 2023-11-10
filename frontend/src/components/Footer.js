@@ -19,13 +19,13 @@ const Footer = () => {
                 <div className="footer_content_contact">
                     <ul>
                         <li>
-                            <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+                            <a href="#"><FontAwesomeIcon icon={faInstagram} size = "2x"/></a>
                         </li>
                         <li>
-                            <a href="#"><FontAwesomeIcon icon={faDiscord} /></a>
+                            <a href="#"><FontAwesomeIcon icon={faDiscord} size = "2x"/></a>
                         </li>
                         <li>
-                            <a href="#"><FontAwesomeIcon icon={faEnvelope} /></a>
+                            <a href="#"><FontAwesomeIcon icon={faEnvelope} size = "2x"/></a>
                         </li>
                     </ul>
                 </div>

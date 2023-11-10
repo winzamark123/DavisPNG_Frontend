@@ -7,7 +7,7 @@ $pop-gold: #CEA64E;
 @import url('https://fonts.googleapis.com/css2?family=Mada:wght@400;500;700&display=swap');
 
 .footer {
-    border: 1px solid peru; 
+    // border: 1px solid peru; 
     width: 100%;
     height: 400px; 
 
@@ -17,7 +17,7 @@ $pop-gold: #CEA64E;
     text-align: center;
 
     &_content{
-        border: 1px solid red;
+        // border: 1px solid red;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -55,8 +55,8 @@ $pop-gold: #CEA64E;
 
             ul{
                 list-style: none;
-                border: 2px solid beige;
-
+                // border: 2px solid beige;
+                margin-top: 30px;
                 width: 90%;
                 height: 100%;
 
@@ -69,11 +69,15 @@ $pop-gold: #CEA64E;
                 text-align: center;
 
                 li {
-                  width: 100%;
+                  width: 100px;
                   height: 100%; 
 
-                  border: 1px solid red;
-                  margin-right: 10px; // Add some space between the icons
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  // border: 1px solid red;
+                  // margin-right: 10px; // Add some space between the icons
                   a {
                     color: whitesmoke;
                     text-decoration: none; // Optional: Removes the underline from the links
@@ -82,6 +86,10 @@ $pop-gold: #CEA64E;
                     &:hover {
                       // Styles for hover state
                     }
+                  }
+
+                  &:first-child{
+                    margin-left: -40px;
                   }
                 }
                 
