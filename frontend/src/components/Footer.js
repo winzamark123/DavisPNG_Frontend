@@ -2,7 +2,8 @@ import React from 'react'
 import './cssComp/footer.scss';
 import logo from "../assets/logo.svg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
     return (
@@ -18,16 +19,13 @@ const Footer = () => {
                 <div className="footer_content_contact">
                     <ul>
                         <li>
-                            <a href="#"><FontAwesomeIcon icon={faCoffee} /></a>
-
+                            <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
                         </li>
                         <li>
-                            <a href="#"><FontAwesomeIcon icon={faCoffee} /></a>
-
+                            <a href="#"><FontAwesomeIcon icon={faDiscord} /></a>
                         </li>
                         <li>
-                            <a href="#"><FontAwesomeIcon icon={faCoffee} /></a>
-
+                            <a href="#"><FontAwesomeIcon icon={faEnvelope} /></a>
                         </li>
                     </ul>
                 </div>
