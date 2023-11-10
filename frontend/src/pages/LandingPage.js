@@ -30,8 +30,6 @@ const LandingPage = () => {
     return (
         <div className="landing">
             <div className="landing_background">
-                {/* This is a weird part dealing with front-back and top-bottom */}
-                {/* Front is Top, Back is Bottom */}
                 <div className="landing_background_bottom">
                     <div className="landing_background_top">
 
