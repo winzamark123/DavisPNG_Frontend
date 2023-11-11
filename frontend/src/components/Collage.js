@@ -41,6 +41,7 @@ const Collage = () => {
     useEffect(() => {
         let width = 0;
         imageData.forEach((image) => {
+            
             const img = new Image();
             img.onload = () => {
                 width += img.width;
@@ -53,7 +54,7 @@ const Collage = () => {
         });
     }, []);
 
-    const animationDuration = `${totalWidth / 2 / 120}s`;
+    const animationDuration = `${totalWidth / 2 / 100}s`;
 
     return (
         <div className="collage" >

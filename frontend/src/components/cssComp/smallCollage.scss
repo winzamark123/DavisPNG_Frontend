@@ -1,0 +1,28 @@
+.smallCollage{
+    // border: 1px solid black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_carousel{
+        display: flex;
+        // overflow: hidden; /* Updated to hide the scrollbar */
+        white-space: nowrap;
+        scroll-behavior: smooth;
+
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+    
+        &_item{
+            height: 100%;
+            margin-right: 10px;
+
+            &:last-child{
+                margin-right: 0px;
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 import Collage from "../components/Collage";
+import SmallCollage from "../components/SmallCollage";
 
 
 function importAllSVGs(r) {
@@ -32,22 +33,13 @@ const AboutUsPage = () => {
                             <span style={{ fontFamily: "Mada" }}>Every Shot is a memory.</span>
                         </div>
                         <div className="aboutUs_section1_collage">
-
+                            <SmallCollage />
                         </div>
                     </div>
                 </div>
 
                 <div className="aboutUs_topRightCloud"
                     style={{ backgroundImage: `url(${svgImages['topRightCloud.svg']})` }}
-                ></div>
-                <div className="aboutUs_topLeftCloud"
-                    style={{ backgroundImage: `url(${svgImages['topLeftCloud.svg']})` }}
-                ></div>
-                <div className="aboutUs_backgroundCloud"
-                    style={{ backgroundImage: `url(${svgImages['backgroundCloud.svg']})` }}
-                ></div>
-                <div className="aboutUs_cowCloud"
-                    style={{ backgroundImage: `url(${svgImages['cowCloud.svg']})` }}
                 ></div>
                 <div className="aboutUs_topCenterCloud"
                     style={{ backgroundImage: `url(${svgImages['topCenterCloud.svg']})` }}
@@ -60,9 +52,6 @@ const AboutUsPage = () => {
 
                 <div className="aboutUs_section2_background">
                     <div className="aboutUs_section2">
-                        <div className="aboutUs_section2_Cow2"
-                            style={{ backgroundImage: `url(${svgImages['Cow2.svg']})` }}
-                        ></div>
                         <div className="aboutUs_section2_text">
                             <div className="aboutUs_section2_text_title">
                                 <span style={{ fontFamily: "Mada", fontWeight: 700 }}>About Us</span>
@@ -72,6 +61,9 @@ const AboutUsPage = () => {
                             </div>
 
                         </div>
+                        <div className="aboutUs_section2_Cow2"
+                            style={{ backgroundImage: `url(${svgImages['Cow2.svg']})` }}
+                        ></div>
                     </div>
                 </div>
 

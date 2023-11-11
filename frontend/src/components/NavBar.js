@@ -35,10 +35,9 @@ const NavBar = () => {
                 <div className="nav_logo" style={{ backgroundImage: `url(${logo})` }}></div>
                 <ul className="nav_items">
 
-                    <li className="nav_items_item">
+                    {/* <li className="nav_items_item">
                         <a href="/photographers">HOME</a>
-                        {/* <span href="/photographers">PHOTOGRAPHERS</span> */}
-                    </li>
+                    </li> */}
                     <li className="nav_items_item">
                         <a href="/aboutus">ABOUT US</a>
                     </li>
