@@ -74,7 +74,7 @@ $pop-gold: #CEA64E;
         z-index: 0;
         top: 1250px;
         margin-right: 1100px;
-        border: 1px solid red;
+        // border: 1px solid red;
     }
 
     &_cloud5{
@@ -82,8 +82,8 @@ $pop-gold: #CEA64E;
         background-repeat: no-repeat;
 
         image-rendering:crisp-edges;
-        width: 500px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
 
         position: absolute;
         z-index: 5;
@@ -108,7 +108,7 @@ $pop-gold: #CEA64E;
         top: 600px;
         right: 0px;
 
-        // border: 1px solid red;
+        border: 1px solid red;
     }
 
     &_topCenterCloud{

@@ -10,7 +10,10 @@ const AuthBTN = () => {
         if (isAuthenticated) {
             await logout({ returnTo: window.location.origin });
         } else {
-            await loginWithRedirect();
+            // await loginWithRedirect(); 
+
+            //Temporary Lead to Landing Page
+            window.location.href = "/landing";
 
         }
     }
@@ -26,7 +29,7 @@ const AuthBTN = () => {
 
     return (
         <>
-            <span className = "AuthButton" onClick={handleClick}>
+            <span className="AuthButton" onClick={handleClick}>
                 {isAuthenticated ? "Log Out" : "LogIn/SignUP"}
             </span>
         </>

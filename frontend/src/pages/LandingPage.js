@@ -43,7 +43,7 @@ const LandingPage = () => {
                         <span >UC Davis Photographer Platform</span>
                     </div>
                     <div className="landing_content_form_body">
-                        <span id="ComingSoon">Website Coming Soon <span style={{ color: "#B1D1C6", fontWeight: 600 }}>This Winter Graduation!</span></span>
+                        <span id="ComingSoon">Website Coming Soon <span style={{ color: "#B1D1C6", fontWeight: 600 }}>This Winter 2023!</span></span>
                         <span className="landing_content_form_body_getNoti">Get <span style={{ color: "$pop-gold" }}>Notified</span></span>
                         <span id="Launch">When We Launch</span>
                         <span id="spam">Dont Worry we promise we won't spam :3</span>
