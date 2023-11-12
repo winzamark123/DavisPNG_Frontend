@@ -14,6 +14,85 @@ $pop-gold: #CEA64E;
     display:flex;
     flex-direction: column;
     align-items: center;
+    
+    overflow: hidden;
+
+    &_cloud1{
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 400px;
+        height: 430px;
+
+        position: absolute;
+        z-index: 0;
+        top: 1000px;
+        margin-left: 900px;
+        // border: 1px solid red;
+    }
+
+    &_cloud2{
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 400px;
+        height: 430px;
+
+        position: absolute;
+        z-index: 0;
+        top: 700px;
+        margin-right: 1200px;
+        // border: 1px solid red;
+    }
+
+    &_cloud3{
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 400px;
+        height: 430px;
+
+        position: absolute;
+        z-index: 1;
+        top: 1100px;
+        margin-left: 700px;
+        // border: 1px solid red;
+    }
+
+    &_cloud4{
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 250px;
+        height: 200px;
+
+        position: absolute;
+        z-index: 0;
+        top: 1250px;
+        margin-right: 1100px;
+        border: 1px solid red;
+    }
+
+    &_cloud5{
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        image-rendering:crisp-edges;
+        width: 500px;
+        height: 500px;
+
+        position: absolute;
+        z-index: 5;
+        top: 600px;
+        margin-left: 1100px;
+        // border: 1px solid red;
+    }
+
+
 
 
     &_topRightCloud{
@@ -30,50 +109,6 @@ $pop-gold: #CEA64E;
         right: 0px;
 
         // border: 1px solid red;
-    }
-
-    &_topLeftCloud{
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        image-rendering:crisp-edges;
-        width: 430px;
-        height: 430px;
-
-        position: absolute;
-        z-index: 5;
-        top: 800px;
-        left: 0px;
-    }
-
-    &_backgroundCloud{
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        image-rendering:crisp-edges;
-        width: 430px;
-        height: 430px;
-
-        position: absolute;
-        z-index: 5;
-        top: 1200px;
-        right: 0px;
-    }
-
-    &_cowCloud{
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        image-rendering:crisp-edges;
-        width: 430px;
-        height: 430px;
-
-        position: absolute;
-        z-index: 5;
-        top: 1200px;
-        left: 500px;
-        transform: translate(-50%, -50%);
-        z-index: 1;
     }
 
     &_topCenterCloud{
@@ -120,7 +155,6 @@ $pop-gold: #CEA64E;
             align-items: center;
 
         }
-
         width: 1440px;
         height: 600px;
 
@@ -194,15 +228,17 @@ $pop-gold: #CEA64E;
 
     &_section2{
 
-        border: 2px solid orange; 
+        // border: 2px solid orange; 
         width: 1440px;
         height: 788px; 
         
         display: flex;
         justify-content: start;
         align-items: center;
+        
 
         &_background{
+            z-index: 3;
             width: 100%;
             height: 788px;
 
@@ -235,7 +271,8 @@ $pop-gold: #CEA64E;
             height: 390px;
             margin-left: 100px;
 
-            z-index: 5;
+            // position: absolute;
+            z-index: 10;
         }
 
         &_text{
@@ -264,7 +301,6 @@ $pop-gold: #CEA64E;
     }
 
     &_section3{
-
         &_background{
             width: 100%;
             height: 665px;
@@ -385,6 +421,7 @@ $pop-gold: #CEA64E;
 
         }
         &_button{
+            cursor: pointer; 
             width: 186px;
             height: 55px;
             border-radius: 32px;
@@ -401,13 +438,18 @@ $pop-gold: #CEA64E;
                 font-weight: 700;
             }
 
+            &:hover{
+                background-color: #CEA64E;
+                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+            }
+
         }
     }
 
     &_section4{
         height: 200px;
         width: 100%;
-        overflow: hidden;   
+        overflow: hidden; 
         // border: 1px solid pink;
     }
 }

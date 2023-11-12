@@ -16,9 +16,15 @@ function importAllSVGs(r) {
     return images;
 }
 
+
+
 const svgImages = importAllSVGs(require.context('../assets/aboutUs_assets', false, /\.svg$/));
+const cloudSvgImages = importAllSVGs(require.context('../assets/aboutUs_assets/clouds', false, /\.svg$/));
 const AboutUsPage = () => {
 
+    function handleGetStarted() {
+        window.location.href = "/landing";
+    }
     return (
         (
             <div className="aboutUs">
@@ -38,9 +44,27 @@ const AboutUsPage = () => {
                     </div>
                 </div>
 
-                <div className="aboutUs_topRightCloud"
+                {/* <div className="aboutUs_topRightCloud"
                     style={{ backgroundImage: `url(${svgImages['topRightCloud.svg']})` }}
+                ></div> */}
+                 <div className="aboutUs_cloud1"
+                    style={{ backgroundImage: `url(${cloudSvgImages['cloud1.svg']})` }}
                 ></div>
+                <div className="aboutUs_cloud2"
+                    style={{ backgroundImage: `url(${cloudSvgImages['cloud2.svg']})` }}
+                ></div>
+                <div className="aboutUs_cloud3"
+                    style={{ backgroundImage: `url(${cloudSvgImages['cloud3.svg']})` }}
+                ></div>
+                <div className="aboutUs_cloud4"
+                    style={{ backgroundImage: `url(${cloudSvgImages['cloud4.svg']})` }}
+                ></div>
+                <div className="aboutUs_cloud5"
+                    style={{ backgroundImage: `url(${cloudSvgImages['cloud5.svg']})` }}
+                ></div>
+
+
+               
                 <div className="aboutUs_topCenterCloud"
                     style={{ backgroundImage: `url(${svgImages['topCenterCloud.svg']})` }}
                 ></div>
@@ -93,7 +117,7 @@ const AboutUsPage = () => {
                             </div>
 
                         </div>
-                        <div className="aboutUs_section3_button">
+                        <div className="aboutUs_section3_button" onClick={handleGetStarted}>
                             <span>Get Started</span>
                         </div>
                     </div>

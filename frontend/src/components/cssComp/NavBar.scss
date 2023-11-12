@@ -25,11 +25,12 @@ $light-color: #B1D1C6;
 
 }
 .nav_logo{
-    background-size: contain;
+    // border: 1px solid red; 
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 80px;
-    height: 60px;
+    width: 82px;
+    height: 58px;
 
     margin-top: 20px;
     margin-left: 120px;

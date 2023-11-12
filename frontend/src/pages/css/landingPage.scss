@@ -12,15 +12,16 @@ $pop-gold: #CEA64E;
 @import url('https://fonts.googleapis.com/css2?family=Mada:wght@400;500;700&display=swap');
 
 .landing{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    overflow: hidden;
 
     display:flex;
 
     justify-content: center;
     align-items: center;
 
-    border: 1px solid red; 
+    // border: 1px solid red; 
     
     &_background{
         position: relative;
@@ -60,7 +61,7 @@ $pop-gold: #CEA64E;
         width: 1440px;
         height: 1024px; 
 
-        border: 2px solid orange; 
+        // border: 2px solid orange; 
         display: flex;
         flex-direction: column;
         // justify-content: center;
@@ -111,6 +112,7 @@ $pop-gold: #CEA64E;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
+                    margin-bottom: 15px;
                 }
 
                 &_getNoti{
@@ -169,6 +171,7 @@ $pop-gold: #CEA64E;
                     }
 
                     button{
+                        cursor: pointer;
                         width: 135px;
                         height: 53px;
                         flex-shrink: 0;
@@ -186,6 +189,11 @@ $pop-gold: #CEA64E;
                             line-height: 20px; 
                             font-family: "Mada", sans-serif;
                             margin-right: 5px;
+                        }
+
+                        &:hover{
+                            background-color: #98b3aa;
+                            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
                         }
                     }
                     

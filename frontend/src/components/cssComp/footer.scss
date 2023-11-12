@@ -28,7 +28,12 @@ $pop-gold: #CEA64E;
         height: 100%;
 
         &_logo{
-            
+            // border: 1px solid red; 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 82px;
+            height: 58px;
         }
 
         &_body{
