@@ -3,6 +3,8 @@ import ProfilePage from './pages/ProfilePage';
 import NavBar from './components/NavBar';
 import PhotographersPage from './pages/PhotographersPage';
 import AboutUsPage from './pages/AboutUsPage';
+import "./pages/userLogin/loginStyle.css"
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -26,6 +28,7 @@ function App() {
           <Route path="/photographers" element={<PhotographersPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={NotFound} />
+          <Route path="/pages/logInPage" element={<logIn />} />
         </Routes>
       </Router>
     </div>
