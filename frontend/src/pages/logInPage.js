@@ -19,14 +19,12 @@ const logIn =() =>{
                 <h1 id="header">Login</h1>
                 <p id="subtitle">Don't have an account? <span id="SignUp"><a href=" ">Sign Up</a></span></p>
                 <div id="E&P">
-                    <form action="">
-                        <label htmlFor="email">Email Address</label><br/>
-                        <input type="text" id="email" name="Email" placeholder="Enter your email" />
-                    </form>
-                    <br/>
-                    <form action="">
-                        <label htmlFor="password">Password</label><br/>
-                        <input type="text" id="password" name="Password" placeholder="Enter your password"/>
+                    <form>
+                        <label htmlFor="email">Email Address</label><br />
+                        <input type="text" id="email" name="Email" placeholder="Enter your email" /><br />
+                        <label htmlFor="password">Password</label><br />
+                        <input type="password" id="password" name="Password" placeholder="Enter your password" /><br />
+                        {/* ... other elements ... */}
                     </form>
                     <br/>
                     <div id="annotation">
