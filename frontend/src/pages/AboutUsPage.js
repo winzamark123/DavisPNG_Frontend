@@ -47,7 +47,7 @@ const AboutUsPage = () => {
                 {/* <div className="aboutUs_topRightCloud"
                     style={{ backgroundImage: `url(${svgImages['topRightCloud.svg']})` }}
                 ></div> */}
-                 <div className="aboutUs_cloud1"
+                <div className="aboutUs_cloud1"
                     style={{ backgroundImage: `url(${cloudSvgImages['cloud1.svg']})` }}
                 ></div>
                 <div className="aboutUs_cloud2"
@@ -64,7 +64,7 @@ const AboutUsPage = () => {
                 ></div>
 
 
-               
+
                 <div className="aboutUs_topCenterCloud"
                     style={{ backgroundImage: `url(${svgImages['topCenterCloud.svg']})` }}
                 ></div>

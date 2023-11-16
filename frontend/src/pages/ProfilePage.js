@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import './profilePage.scss';
+import './css/profilePage.scss';
 import NavBar from "../components/NavBar";
 
 import { getUserProfile } from '../api/user';

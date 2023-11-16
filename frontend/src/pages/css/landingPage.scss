@@ -11,6 +11,7 @@ $pop-gold: #CEA64E;
 
 @import url('https://fonts.googleapis.com/css2?family=Mada:wght@400;500;700&display=swap');
 
+
 .landing{
     width: 100%;
     height: 100vh;
@@ -275,6 +276,33 @@ $pop-gold: #CEA64E;
 
 
 }
+
+// @media (max-width: 900px){
+//     .landing_content{
+//         border: 1px solid orange;
+//         display: flex;
+//         flex-direction: column;
+
+//         align-items: center;
+//         justify-content: center;
+//         text-align: center;
+
+//         &_form{
+//             border: 1px solid beige;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             align-items: center;
+//             text-align: center;
+
+
+//         }
+
+//         &_loadbar{
+        
+//         }
+//     }
+// }
 
 @keyframes barStripe {
     0% { background-position: 1em 0; }
