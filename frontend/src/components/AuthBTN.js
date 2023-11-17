@@ -10,10 +10,10 @@ const AuthBTN = () => {
         if (isAuthenticated) {
             await logout({ returnTo: window.location.origin });
         } else {
-            // await loginWithRedirect();
+            await loginWithRedirect();
 
             //Temporary Lead to Landing Page
-            window.location.href = "/landing";
+            // window.location.href = "/landing";
 
         }
     }
