@@ -28,7 +28,9 @@ const AboutUsPage = () => {
     return (
         (
             <div className="aboutUs">
-                <NavBar />
+                <div className="navBar">
+                    <NavBar />
+                </div>
                 <div className="aboutUs_section1_background">
                     <div className="aboutUs_section1">
                         <div className="aboutUs_section1_coverBG"></div>
@@ -125,7 +127,9 @@ const AboutUsPage = () => {
                 <div className="aboutUs_section4">
                     <Collage />
                 </div>
-                <Footer />
+                <div className="footer">
+                    <Footer />
+                </div>
             </div >
 
         )
