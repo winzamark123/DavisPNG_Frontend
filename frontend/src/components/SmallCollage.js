@@ -27,7 +27,11 @@ const SmallCollage = () => {
         <div className="smallCollage">
             <div className="smallCollage_carousel">
                 {imageData.map((image, index) => (
-                    <img key={index} src={image.url} alt={image.alt} className="smallCollage_carousel_item" />
+                    <img
+                        key={index}
+                        src={image.url}
+                        alt={image.alt}
+                        className="smallCollage_carousel_item" />
                 ))}
             </div>
         </div>

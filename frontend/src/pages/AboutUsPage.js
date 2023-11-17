@@ -28,7 +28,7 @@ const AboutUsPage = () => {
     return (
         (
             <div className="aboutUs">
-                <div className="navBar">
+                <div className="aboutUs_navBar">
                     <NavBar />
                 </div>
                 <div className="aboutUs_section1_background">
@@ -127,7 +127,7 @@ const AboutUsPage = () => {
                 <div className="aboutUs_section4">
                     <Collage />
                 </div>
-                <div className="footer">
+                <div className="aboutUs_footer">
                     <Footer />
                 </div>
             </div >
