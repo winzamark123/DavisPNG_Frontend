@@ -1,7 +1,7 @@
 import './css/settingsPage.scss'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { useState, useEffect, useCallback} from 'react';
+import { useState, useEffect, useRef} from 'react';
 import { faMars, faVenus, faTransgender, faDownLong, faCamera, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getUserProfile, updateUserProfile } from '../api/user';
@@ -23,9 +23,16 @@ const SettingsPage = () => {
     const [email, setEmail] = useState("");
     const [insta, setInsta] = useState("");
     const [FB, setFB] = useState("");
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [imagePreview, setImagePreview] = useState(null);
+    const [file, setFile] = useState(null);  // stores the image file
+    const [showBorder, setshowBorder] = useState(true);
+    const [notUploaded, setnotUploaded] = useState(true); // whether or not the profile pic has been uploaded
 
     const [accountType, setAccountType] = useState("Photographer");
     const [user_type, setUser_type] = useState(1); // 0 = Photographer, 1 = User
+
+    const fileInputRef = useRef(null);
 
     const { user, getAccessTokenSilently } = useAuth0();
     // const [isPhotographer, setIsPhotographer] = useState(false);
@@ -181,6 +188,50 @@ const SettingsPage = () => {
         };
 
 
+        /*const handleImageChange = (e) => {
+            const file = e.target.files[0];
+            setSelectedImage(file);
+
+            const previewURL = URL.createObjectURL(file);
+            setImagePreview(previewURL);
+        };*/
+        
+        const handleUpload = () => {
+            // Implement your upload logic here, e.g., send the image to a server using an API
+            if (selectedImage) {
+                // Use FormData to send the image file to the server
+                const formData = new FormData();
+                formData.append('image', selectedImage);
+        
+                // You can now send formData to your server using an API call
+                // For example, using the fetch API or axios
+                // Example using fetch:
+                // fetch('/api/upload', {
+                //   method: 'POST',
+                //   body: formData,
+                // })
+                //   .then(response => response.json())
+                //   .then(data => console.log(data))
+                //   .catch(error => console.error('Error:', error));
+            }
+        };
+
+        const handleSelectImage = (event) => {
+            console.log(event.target.files[0]);
+            setFile(event.target.files[0]);
+            setshowBorder(false)
+            const fileReader = new FileReader();
+            fileReader.onloadend = () => {
+                setImagePreview(fileReader.result);
+            }
+            fileReader.readAsDataURL(event.target.files[0]);
+
+            setnotUploaded(false)
+        }
+
+        const handleButtonClick = () => {
+            fileInputRef.current.click();
+          };
 
     function handleChoice() {
         if (accountType === "Photographer") {
@@ -239,6 +290,16 @@ const SettingsPage = () => {
 
     }
 
+    /*const pfpStyle = {
+        backgroundImage: notUploaded ? `(url(${tempUser.profilePic})` : `url(${imagePreview})`,
+        width: '100px',  // Use single quotes or double quotes
+        height: '100px', // Use single quotes or double quotes
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat', // Use single quotes or double quotes
+        borderRadius: '50%',
+    }*/
+
     return (
         <div className="settingsPage">
             <div className="settingsPage_left">
@@ -248,10 +309,18 @@ const SettingsPage = () => {
                     </div>
 
                     <div className="settingsPage_left_container_body">
-                        <div className="settingsPage_left_container_body_profile">
-                            <div className="settingsPage_left_container_body_profile_pic"
-                                style={{ backgroundImage: `url(${tempUser.profilePic})` }}
-                            ></div>
+                        <div className={showBorder ? "settingsPage_left_container_body_profile_border" : "settingsPage_left_container_body_profile"}>
+                            <div className={ notUploaded ? "settingsPage_left_container_body_profile_pic" : "settingsPage_left_container_body_profile_pic_uploaded"}
+                                style={{backgroundImage: notUploaded ? `(url(${tempUser.profilePic})` : `url(${imagePreview})`,}}
+                            >
+                                <input type="file" accept="image/*" onChange={handleSelectImage} style={{ display: 'none' }} ref={fileInputRef}/>
+                                <button className='uploadImg' onClick={handleButtonClick}>
+                                    <img src='https://cdn3.iconfinder.com/data/icons/feather-5/24/edit-512.png' alt='edit button' className='editBtn'/>
+                                    {/*{imagePreview && <img src={imagePreview} alt="Preview" style={{ maxWidth: '100%', maxHeight: '200px' }} />}*/}
+                                </button>
+                                
+                                {/*<button onClick={handleUpload}>Upload</button>*/}
+                            </div>
                             <div className="settingsPage_left_container_body_profile_edit">
                                 <div className="settingsPage_left_container_body_profile_edit_camera">
                                     <FontAwesomeIcon icon={faCamera} />
@@ -427,7 +496,9 @@ const SettingsPage = () => {
                     <i class="fi fi-sr-lock"></i>
                 </div>
             </div> */}
-
+            <div className='saveBtn'>
+                <button onClick={updateSettings}>Save</button>
+            </div>
         </div>
     )
 }
