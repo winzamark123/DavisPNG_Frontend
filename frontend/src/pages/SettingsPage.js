@@ -1,7 +1,7 @@
 import './css/settingsPage.scss'
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from 'react';
+import { useState, useEffect, useCallback} from 'react';
 import { faMars, faVenus, faTransgender, faDownLong, faCamera, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getUserProfile, updateUserProfile } from '../api/user';
@@ -53,9 +53,11 @@ const SettingsPage = () => {
 
             if (category === "Gender") {
                 setuserGender(item.text);
+                setSelectedText(item.text);
 
             } else if (category === "Pronouns") {
                 setuserPronouns(item.text);
+                setSelectedText(item.text);
             }
 
             console.log(item.text);
@@ -96,6 +98,89 @@ const SettingsPage = () => {
         )
 
     }
+
+    const GenderDropdownMenu = ({ items, category }) => {
+    // State to manage the selected value
+        console.log("user gender:", userGender)
+        const [selectedOption, setSelectedOption] = useState(userGender);
+        
+        const optionsArray = Object.keys(items).map((key) => ({
+            value: key,
+            text: items[key].text,
+          }));
+
+        // Function to handle the change in the dropdown value
+        const handleSelectChange = (event) => {
+            setSelectedOption(event.target.value);
+            console.log('Selected Value:', event.target.value); // Log the selected value
+        };
+
+        useEffect(() => {
+            console.log(selectedOption)
+
+            //update stored gender/ pronoun values
+            if (category === "Gender") {
+                setuserGender(selectedOption);
+            }
+            /*else if (category === "Pronouns") {
+                setuserPronouns(selectedOption);
+            }*/
+        }, [selectedOption])
+        
+        return (
+        <div>
+            {/*<label htmlFor="dropdown" >{category}:</label>*/}
+            <select id="dropdown" value={selectedOption} onChange={handleSelectChange} className="dropdown_BTN">
+                <option value=''>Select...</option>
+                {optionsArray.map((option, index) => (
+                    <option key={index}>
+                    {option.text}
+                    </option>
+                ))}
+            </select>
+        </div>
+        );
+    };
+
+    const PronounDropdownMenu = ({ items, category }) => {
+        // State to manage the selected value
+            console.log("user pronoun:", userPronouns)
+            const [selectedOption, setSelectedOption] = useState(userPronouns);
+            
+            const optionsArray = Object.keys(items).map((key) => ({
+                value: key,
+                text: items[key].text,
+              }));
+    
+            // Function to handle the change in the dropdown value
+            const handleSelectChange = (event) => {
+                setSelectedOption(event.target.value);
+                console.log('Selected Value:', event.target.value); // Log the selected value
+            };
+    
+            useEffect(() => {
+                console.log(selectedOption)
+    
+                //update stored gender/ pronoun values
+                setuserPronouns(selectedOption);
+            }, [selectedOption])
+            
+            return (
+            <div>
+                {/*<label htmlFor="dropdown" >{category}:</label>*/}
+                <select id="dropdown" value={selectedOption} onChange={handleSelectChange} className="dropdown_BTN_pronoun">
+                    <option value=''>Select...</option>
+                    {optionsArray.map((option, index) => (
+                        <option key={index}>
+                        {option.text}
+                        </option>
+                    ))}
+                </select>
+            </div>
+            );
+        };
+
+
 
     function handleChoice() {
         if (accountType === "Photographer") {
@@ -204,16 +289,16 @@ const SettingsPage = () => {
                                 </div>
 
                                 <div className="settings_Page_left_container_form_left_gender">
-                                    <div className="settingsPage_left_container_body_form_left_gender_label">Gender</div>
-                                    <DropdownMenu
+                                    {/*<div className="settingsPage_left_container_body_form_left_gender_label">Gender</div>
+                                    DropdownMenu
                                         items={gender} category="Gender">
-                                    </DropdownMenu>
+                                    </DropdownMenu>*/}
+                                    <div className="settingsPage_left_container_body_form_left_gender_label">Gender</div>
+                                    <GenderDropdownMenu items={gender} category="Gender"></GenderDropdownMenu>
                                 </div>
                                 <div className="settingsPage_left_container_body_form_left_pronouns">
                                     <div className="settingsPage_left_container_body_form_left_prounouns_label">Pronouns</div>
-                                    <DropdownMenu
-                                        items={pronouns} category="Pronouns">
-                                    </DropdownMenu>
+                                    <PronounDropdownMenu items={pronouns} category="Pronouns"></PronounDropdownMenu>
                                 </div>
                                 <div className="settingsPage_left_container_body_form_left_School">
                                     <div className="settingsPage_left_container_body_form_left_School_label">School</div>
@@ -244,7 +329,7 @@ const SettingsPage = () => {
                                     </div>
                                 </div>
                                 <div className="settingsPage_left_container_body_form_right_priceRange">
-                                    <div className="settingsPage_left_container_body_form_right_priceRange_label">Price Range</div>
+                                    <div className="settingsPage_left_container_body_form_right_priceRange_label">Price Range ($ /hr)</div>
                                     <div className="settingsPage_left_container_body_form_right_priceRange_input">
                                         <input type="number" name="quantity" min="1" max="1000" placeholder={priceRange} onChange={(e) => setPriceRange(e.target.value)} />
                                     </div>
@@ -292,7 +377,10 @@ const SettingsPage = () => {
                                     </div>
                                     <div className="settingsPage_right_container_top_contact_body_form_right">
                                         <div className="settingsPage_right_container_top_contact_body_form_right_insta">
-                                            <div className="settingsPage_right_container_top_contact_body_form_right_insta_label">Instagram</div>
+                                            <div className="settingsPage_right_container_top_contact_body_form_right_insta_label">
+                                                <img className="logo" src= "https://i.pinimg.com/originals/94/40/9a/94409a775c02d7658dd6e7ba88429b63.png" alt="IG logo" />
+                                                Instagram
+                                            </div>
                                             <div className="settingsPage_right_container_top_contact_body_form_right_insta_input">
                                                 <input type="text"
                                                     placeholder={tempUser.name}
@@ -302,7 +390,10 @@ const SettingsPage = () => {
                                             </div>
                                         </div>
                                         <div className="settingsPage_right_container_top_contact_body_form_right_FB">
-                                            <div className="settingsPage_right_container_top_contact_body_form_right_FB_label">Facebook</div>
+                                            <div className="settingsPage_right_container_top_contact_body_form_right_FB_label">
+                                            <img className="logo" src= "https://i0.wp.com/gethsemanebaptistchurch.org/wp-content/uploads/2019/05/facebook-logo-png-transparent-background-1024x1024.png?ssl=1" alt="FB logo" />
+                                                Facebook
+                                            </div>
                                             <div className="settingsPage_right_container_top_contact_body_form_right_FB_input">
                                                 <input type="text"
                                                     placeholder={tempUser.name}
