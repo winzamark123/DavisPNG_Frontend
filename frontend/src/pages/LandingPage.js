@@ -8,13 +8,25 @@ import { emailSignUp } from '../api/user';
 import { useState } from 'react';
 
 const LandingPage = () => {
+    const [buttonClass, setButtonClass] = useState("");
     const [email, setEmail] = useState("");
 
     function handleSendEmail(event) {
         event.preventDefault();
 
         if (email === "") {
-            alert("Please enter a valid email address");
+            // alert("Please enter a valid email address");
+
+            // Use setTimeout to reapply the class, ensuring the browser recognizes it as a new animation
+            setTimeout(() => {
+                setButtonClass("errorBTN-animation");
+
+                // Automatically remove the class after the animation duration (500ms)
+                setTimeout(() => setButtonClass(""), 500);
+            }, 10); // Short delay before reapplying the class
+
+            // Reset email state to clear the input field
+            setEmail("");
             return;
         }
 
@@ -26,6 +38,10 @@ const LandingPage = () => {
         console.log(jsonData);
 
         emailSignUp(jsonData);
+
+        // Reset email state to clear the input field
+        setEmail("");
+
     }
 
     return (
@@ -52,8 +68,12 @@ const LandingPage = () => {
                         <span id="spam">*Dont Worry we promise we won't spam :3</span>
 
                         <form>
-                            <input type="text" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
-                            <button type="submit" onClick={handleSendEmail}>
+                            <input type="text" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <button
+                                type="submit"
+                                onClick={handleSendEmail}
+                                className={buttonClass}
+                            >
                                 <span>Notify Me</span>
                                 <FontAwesomeIcon icon={faEnvelope} />
                             </button>
