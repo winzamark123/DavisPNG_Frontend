@@ -39,7 +39,7 @@ const NavBar = () => {
                         <a href="/photographers">HOME</a>
                     </li> */}
                     <li className="nav_items_item">
-                        <a href="/aboutus">ABOUT US</a>
+                        <a id="aboutUsNav" href="#">ABOUT US</a>
                     </li>
                     <li className="nav_items_item">
                         <AuthBTN />
