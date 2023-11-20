@@ -1,7 +1,7 @@
 import './App.css';
 import ProfilePage from './pages/ProfilePage';
 import NavBar from './components/NavBar';
-import PhotographersPage from './pages/PhotographersPage';
+import MarketPlacePage from './pages/MarketPlacePage';
 import AboutUsPage from './pages/AboutUsPage';
 import SettingsPage from './pages/SettingsPage';
 import ChoicePage from './pages/ChoicePage';
@@ -26,7 +26,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<AboutUsPage />} />
-          <Route path="/photographers" element={<PhotographersPage />} />
+          <Route path="/marketplace" element={<MarketPlacePage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/choice" element={<ChoicePage />} />
