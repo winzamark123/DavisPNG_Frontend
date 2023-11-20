@@ -4,12 +4,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
 import { faMars, faVenus, faTransgender, faDownLong, faCamera, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getUserProfile, updateUserProfile } from '../api/user';
+import { getPhotographers, updateUserProfile } from '../api/user';
 import { useAuth0 } from '@auth0/auth0-react';
 
 
 const SettingsPage = () => {
-    const tempUser = getUserProfile();
+    const tempUser = getPhotographers()[0];
     const [firstName, setFirstName] = useState(tempUser.name);
     const [middleName, setMiddleName] = useState("");
     const [lastName, setLastName] = useState(tempUser.name);

@@ -1,5 +1,5 @@
 import './App.css';
-import ProfilePage from './pages/ProfilePage';
+import PortfolioPage from './pages/PortfolioPage';
 import NavBar from './components/NavBar';
 import MarketPlacePage from './pages/MarketPlacePage';
 import AboutUsPage from './pages/AboutUsPage';
@@ -12,6 +12,7 @@ import {
   Route,
   useNavigate,
 } from "react-router-dom";
+
 
 function NotFound() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AboutUsPage />} />
           <Route path="/marketplace" element={<MarketPlacePage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/portfolio/:uuid" element={<PortfolioPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/choice" element={<ChoicePage />} />
           <Route path="/landing" element={<LandingPage />} />

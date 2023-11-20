@@ -5,21 +5,28 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const BASE_URL = 'https://davispng.azurewebsites.net';
 
-const user = {
-    "id": "1",
-    "first_name": "John",
-    "last_name": "Doe",
-    "phone_number": "1234567890",
-    "user_type": "photographer",
-    "profile_picture": tempProfile,
-    "bio": "I am a photographer",
-    "location": "Davis, CA",
-    "website": "https://www.google.com",
-    "instagram": "https://www.instagram.com",
-    "facebook": "https://www.facebook.com",
-    "twitter": "https://www.twitter.com",
+const photographer1 = {
+    uuid: "1",
+    fname: "John",
+    lname: "Doe",
+    price: 1.00,
+    birthdate: "01/01/2000",
+    description: "My name is John",
+    profile_pic: tempProfile,
+}
+
+const photographer2 = {
+    uuid: "2",
+    fname: "Katie",
+    lname: "Peterson",
+    price: 2.00,
+    birthdate: "02/02/2000",
+    description: "My name is Katie",
+    profile_pic: tempProfile,
 
 }
+
+const photographers = [photographer1, photographer2]
 
 export const fetchTokenAndUserID = async (user, getAccessTokenSilently) => {
     if (user) {
@@ -46,9 +53,9 @@ export const tempCreateUser = async (user, getAccessTokenSilently) => {
 };
 
 // Fetch user profile information
-export const getUserProfile = (userId) => {
+export const getPhotographers = (userId) => {
     // return axios.get(`${BASE_URL}/user/${userId}`); 
-    return user;
+    return photographers;
 };
 
 export const updateUserChoice = async (user, getAccessTokenSilently, data) => {

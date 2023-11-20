@@ -1,25 +1,32 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useParams } from 'react-router-dom';
 import './css/profilePage.scss';
 import NavBar from "../components/NavBar";
 
-import { getUserProfile } from '../api/user';
+import { getPhotographers } from '../api/user';
 
-const ProfilePage = () => {
-    const tempUser = getUserProfile();
+const getPhotographer = (uuid) => {
+    const photographers = getPhotographers();
+    return photographers.find((photographer) => photographer.uuid === uuid);
+}
+
+const PortfolioPage = () => {
+    const { uuid } = useParams();
+
+    const photographer = getPhotographer(uuid);
+
+
     return (
         (
             <div className="profilePage">
-                 <NavBar />
+                <NavBar />
                 <div className="profile_container">
                     <div className="profile">
                         <div className="profile_left">
-                            <div className="profile_left_pic" style={{ backgroundImage: `url(${tempUser.profilePic})` }}>
+                            <div className="profile_left_pic" style={{ backgroundImage: `url(${photographer.profilePic})` }}>
                             </div>
                             <div className="profile_left_text">
-                                <div className="profile_left_text_row">Name: {tempUser.name}</div>
-                                <div className="profile_left_text_row">Price: {tempUser.price}</div>
-                                <div className="profile_left_text_row">Gender: {tempUser.gender}</div>
-                                <div className="profile_left_text_row">Age: {tempUser.age}</div>
+                                <div className="profile_left_text_row">Name: {photographer.fname}</div>
+                                <div className="profile_left_text_row">Price: {photographer.price}</div>
 
 
 
@@ -29,7 +36,7 @@ const ProfilePage = () => {
                         </div>
                         <div className="profile_right">
                             <div className="profile_right_descrip">
-                                {tempUser.profileDescrip}
+                                {photographer.description}
                             </div>
                         </div>
 
@@ -45,4 +52,4 @@ const ProfilePage = () => {
     )
 }
 
-export default ProfilePage;
+export default PortfolioPage;

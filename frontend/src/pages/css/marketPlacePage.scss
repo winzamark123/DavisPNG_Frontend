@@ -41,4 +41,18 @@ $pop-gold: #CEA64E;
         }
     }
 
+    &_body{
+        border: 1px solid red; 
+        
+        &_photographers{
+            border: 1px solid black; 
+            display: flex;
+            
+        }
+    }
+
+}
+
+.photographer_card{
+    border: 1px solid black;
 }
