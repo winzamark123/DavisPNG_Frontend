@@ -126,10 +126,10 @@ export const emailSignUp = async (email) => {
         });
 }
 
-export const createUserProfile = (data, getAccessTokenSilently) => {
+export const createUserProfile = (user, getAccessTokenSilently) => {
     console.log("createUserProfile");
     const { token, userID } = fetchTokenAndUserID(user, getAccessTokenSilently);
-    return axios.post(`${BASE_URL}/user/create/`, data, {
+    return axios.post(`${BASE_URL}/user/create/`, user, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
