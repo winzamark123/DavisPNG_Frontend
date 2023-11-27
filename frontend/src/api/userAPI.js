@@ -1,7 +1,6 @@
 
 import axios from 'axios';
 import tempProfile from '../assets/tempProfile.png';
-import { useAuth0 } from "@auth0/auth0-react";
 
 const BASE_URL = 'https://davispng.azurewebsites.net';
 
@@ -54,8 +53,9 @@ export const tempCreateUser = async (user, getAccessTokenSilently) => {
 
 // Fetch user profile information
 export const getPhotographers = (userId) => {
-    // return axios.get(`${BASE_URL}/user/${userId}`); 
+
     return photographers;
+
 };
 
 export const updateUserChoice = async (user, getAccessTokenSilently, data) => {
@@ -101,30 +101,6 @@ export const updateUserProfile = (user, getAccessTokenSilently, data) => {
     }
     )
 };
-//signup email for the landing page 
-export const emailSignUp = async (email) => {
-    console.log("EmailSignUp:", email);
-
-    //No need for Authorization and Secret headers
-    const headers = {
-        'Content-Type': 'application/json'
-    };
-
-    return axios.post(`${BASE_URL}/landing/`, email, { headers })
-        .then(response => {
-            console.log("Successfully sent email:", response.data);
-            return response.data;
-        })
-        .catch(error => {
-            console.error("Error sending email:", error);
-            if (error.response) {
-                console.log('Response data:', error.response.data);
-                console.log('Response status:', error.response.status);
-                console.log('Response headers:', error.response.headers);
-            }
-            // throw error; // Uncomment this if you want to propagate the error to the caller
-        });
-}
 
 export const createUserProfile = (user, getAccessTokenSilently) => {
     console.log("createUserProfile");
@@ -156,23 +132,3 @@ export const createUserProfile = (user, getAccessTokenSilently) => {
             // throw error; // This will ensure that the error is propagated to the caller for further handling if needed.
         });
 };
-
-// export const checkAndCreateUser = async (token, userData) => {
-//     try {
-//         const checkResponse = await axios.get(`${BASE_URL}/user/`, {
-//             headers: {
-//                 'Authorization': `Bearer ${token}`,
-//             },
-//         });
-
-//         if (!checkResponse.data.userExists) {
-//             await createUserProfile(userData.sub.split('|')[1], userData, token, checkResponse.data.secret);
-//         }
-//     } catch (error) {
-//         console.error("Error:", error);
-//     }
-// };
-
-
-
-// ... any other user-related API functions

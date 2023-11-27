@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import barCam from '../assets/landingPage_assets/barCam.svg';
 import workingCow from '../assets/landingPage_assets/workingCow.svg';
-import { emailSignUp } from '../api/user';
+import { emailSignUp } from '../api/emailSignupAPI';
 import { useState } from 'react';
 
 const LandingPage = () => {

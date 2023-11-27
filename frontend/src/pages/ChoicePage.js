@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAuth0 } from "@auth0/auth0-react";
-import { updateUserChoice } from '../api/user';
+import { updateUserChoice } from '../api/userAPI';
 import { useState } from 'react';
 const ChoicePage = () => {
     const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();

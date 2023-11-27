@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
 import { faMars, faVenus, faTransgender, faDownLong, faCamera, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getPhotographers, updateUserProfile } from '../api/user';
+import { getPhotographers, updateUserProfile } from '../api/userAPI';
 import { useAuth0 } from '@auth0/auth0-react';
 
 

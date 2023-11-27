@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import NavBar from "../components/NavBar";
-import { getPhotographers } from "../api/user";
+import { getPhotographers } from "../api/userAPI";
+import { tempFetchPhotographers } from "../api/marketplaceAPI";
 import './css/marketPlacePage.scss';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +23,7 @@ const PhotographerCard = ({ photographer }) => {
 };
 
 const MarketPlace = () => {
-    const photographers = getPhotographers();
+    const photographers = tempFetchPhotographers();
     return (
         <div className="marketplace">
             <div className="marketplace_nav">

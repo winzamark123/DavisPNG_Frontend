@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import './css/profilePage.scss';
 import NavBar from "../components/NavBar";
 
-import { getPhotographers } from '../api/user';
+import { getPhotographers } from '../api/userAPI';
 
 const getPhotographer = (uuid) => {
     const photographers = getPhotographers();
