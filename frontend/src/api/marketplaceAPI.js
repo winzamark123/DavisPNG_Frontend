@@ -25,9 +25,10 @@ const photographer2 = {
 
 const photographers = [photographer1, photographer2]
 
-export const fetchPhotographers = async (userId) => {
+export const fetchPhotographers = async () => {
     try {
-        const response = await axios.get(`${BASE_URL}/photographer/read/${userId}/profile`);
+        const response = await axios.get(`${BASE_URL}/photographer/read/marketplace`);
+        console.log("Photographers:", response.data);
         return response.data;
     } catch (error) {
         console.error("Error fetching photographers:", error);
