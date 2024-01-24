@@ -17,7 +17,8 @@ DavisPNG is a website marketplace created with the purpose of linking photograph
 
 Experience the live version and sign up for when we deploy our whole application here: <a href="https://davispng.com/" target = "_blank"> davispng.com </a>
 
-<img src="./gitImages/HomePage.png" alt="Home Page" width="250" height="250"/><img src="./gitImages/SignupPage.png" alt="Sign Up Page" width="250" height="250"/>
+<img src="./gitImages/HomePage.png" alt="Home Page" width="250"/>
+<img src="./gitImages/SignupPage.png" alt="Sign Up Page" width="250"/>
 
 ## Features
 
