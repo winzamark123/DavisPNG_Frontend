@@ -41,4 +41,5 @@ The website is still under development but input your email so that we can get b
 - Teeranade Cheng (Win) - Initial Work: <a href="https://www.linkedin.com/in/teeranade-cheng/" target = "_blank">LinkedIN</a>
 - Khunanya Liu (Yaya) - UIUX Designer: <a href="https://www.linkedin.com/in/khunanya-liu/" target = "_blank"> LinkedIN</a>
 - John Carraher - UIUX Designer:
+- Ray Tam - Front-end: <a href="https://github.com/hdjekso" target = "_blank">Github</a>
 - Chen Yi - Front-end: <a href="https://github.com/cyzhoutt" target = "_blank">Github</a>
