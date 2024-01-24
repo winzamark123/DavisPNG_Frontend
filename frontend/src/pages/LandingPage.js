@@ -53,7 +53,7 @@ const LandingPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="landing_content">
+            <div className="landing_c2ontent">
                 <div className="landing_content_form">
                     <div className="landing_content_form_title">
                         <span >UC Davis</span>
