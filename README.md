@@ -6,7 +6,6 @@
 - [Live Demo](#live-demo)
 - [Features](#features)
 - [Tools and Frameworks Used](#tools-and-frameworks-used)
-- [Contributing](#contributing)
 - [Credits](#credits)
 
 ## Introduction
